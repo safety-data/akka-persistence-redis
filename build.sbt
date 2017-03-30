@@ -1,7 +1,7 @@
 import com.typesafe.sbt.SbtScalariform._
 import scalariform.formatter.preferences._
 
-val akkaVersion = "2.4.16"
+val akkaVersion = "2.4.17"
 val redisScalaVersion = "1.8.0"
 
 lazy val dependencies = Seq(
@@ -9,7 +9,8 @@ lazy val dependencies = Seq(
   "com.typesafe.akka" %% "akka-persistence-query-experimental" % akkaVersion,
   "com.github.etaty" %% "rediscala" % redisScalaVersion,
   "io.spray" %%  "spray-json" % "1.3.3",
-  "org.scalatest" %% "scalatest" % "3.0.1" % "test")
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test",
+  "com.typesafe.akka" %% "akka-persistence-tck" % akkaVersion % "test")
 
 lazy val root = project.in(file("."))
   .settings(
