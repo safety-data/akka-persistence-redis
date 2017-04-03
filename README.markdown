@@ -15,7 +15,7 @@
 
 ## What is it?
 
-Akka Persistence Redis Plugin is a plugin for Akka persistence that provides several components:
+Akka Persistence Redis Plugin is a plugin for [Akka persistence](http://doc.akka.io/docs/akka/2.4/scala/persistence.html) that provides several components:
  - a journal store ;
  - a snapshot store ;
  - a journal query interface implementation.
@@ -62,6 +62,14 @@ val readJournal = PersistenceQuery(system)
 ```
 
 For more details on the available capabilities of the journal query, please refer to the API documentation.
+
+## Database Configuration
+
+This plugin uses [rediscala](https://github.com/etaty/rediscala) to connect to redis databases and is configured using [Typesafe config](https://github.com/typesafehub/config/) library.
+
+A default database configuration is used for all components, under the path `akka-persistence-redis.redis`. You may either override this path to apply changes to all components, or override it locally for each component.
+
+See the [reference configuration](src/main/resources/reference.conf) for more details on possible configuration.
 
 ## License
 
