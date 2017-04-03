@@ -1,0 +1,17 @@
+language: scala
+scala:
+   2.12.1
+
+jdk:
+  - oraclejdk8
+
+# only trigger builds on master
+branches:
+  only:
+    - master
+
+services:
+    - redis-server
+
+script:
+  - sbt test
