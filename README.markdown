@@ -24,8 +24,8 @@ This plugin stores data in a [redis](https://redis.io) database.
 
 ## (De)Serializion
 
-The journal component saves serialized values into the database.
-It relies on the [Akka serialization extension](http://doc.akka.io/docs/akka/2.4/scala/serialization.html).
+The journal and snapshot components save serialized values into the database.
+They rely on the [Akka serialization extension](http://doc.akka.io/docs/akka/2.4/scala/serialization.html).
 Custom serialization can be added to handle you data model elements as you wish.
 
 ## Using the Journal Component
@@ -40,6 +40,14 @@ akka.persistence.journal.plugin = "akka-persistence-redis.journal"
 
 The journal component has support for tagged events.
 All events wrapped inside an instance of class `akka.persistence.journal.Tagged` are associated to the provided tags in the data store.
+
+## Using the Snapshot Component
+
+To use the snapshot component, you need to enable it in your configuration. To use the default settings, simply add this line:
+
+```scala
+akka.persistence.snapshot.plugin = "akka-persistence-redis.snapshot"
+```
 
 ## Using the Journal Query Interface Component
 

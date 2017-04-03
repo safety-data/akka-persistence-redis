@@ -17,14 +17,6 @@ package akka
 package persistence
 package redis
 
-object RedisKeys {
-  val identifiersKey = "journal:persistenceIds"
-  val tagsKey = "journal:tags"
-  def highestSequenceNrKey(persistenceId: String) = f"journal:persisted:$persistenceId:highestSequenceNr"
-  def journalKey(persistenceId: String) = f"journal:persisted:$persistenceId"
-  def journalChannel(persistenceId: String) = f"journal:channel:persisted:$persistenceId"
-  def tagKey(tag: String) = f"journal:tag:$tag"
-  val tagsChannel = "journal:channel:tags"
-  val identifiersChannel = "journal:channel:ids"
-  def snapshotKey(persistenceId: String) = f"snapshot:$persistenceId"
-}
+import util._
+
+final case class SnapshotEntry(sequenceNr: Long, timestamp: Long, snapshot: ByteString)
