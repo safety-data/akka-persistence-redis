@@ -98,8 +98,8 @@ class RedisSnapshotStore(conf: Config) extends SnapshotStore {
       redis
         .zrevrangebyscore[SnapshotEntry](snapshotKey(persistenceId), Limit(0), Limit(Long.MaxValue), Some(0L -> 1L))
         .map {
-          case Seq(SnapshotEntry(sequenceNr, timestamp, snapshot), _*) =>
-            Some(SelectedSnapshot(SnapshotMetadata(persistenceId, sequenceNr, timestamp), snapshot))
+          case Seq(SnapshotEntry(sequenceNr, timestamp, (snapshot)), _*) =>
+            Some(SelectedSnapshot(SnapshotMetadata(persistenceId, sequenceNr, timestamp), snapshotFromBytes(snapshot.toArray).data))
           case _ =>
             None
         }
@@ -116,7 +116,7 @@ class RedisSnapshotStore(conf: Config) extends SnapshotStore {
             seq
               .map {
                 case SnapshotEntry(sequenceNr, timestamp, snapshot) =>
-                  SelectedSnapshot(SnapshotMetadata(persistenceId, sequenceNr, timestamp), snapshot)
+                  SelectedSnapshot(SnapshotMetadata(persistenceId, sequenceNr, timestamp), snapshotFromBytes(snapshot.toArray).data)
               }
               .find(sel => criteria.matches(sel.metadata))
         }
