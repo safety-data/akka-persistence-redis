@@ -8,7 +8,9 @@
 - [(De)Serializion](#deserializion)
 - [Using the Journal Component](#using-the-journal-component)
   - [Tags](#tags)
+- [Using the Snapshot Component](#using-the-snapshot-component)
 - [Using the Journal Query Interface Component](#using-the-journal-query-interface-component)
+- [Database Configuration](#database-configuration)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
