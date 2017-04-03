@@ -5,8 +5,8 @@
 
 
 - [What is it?](#what-is-it)
+- [(De)Serializion](#deserializion)
 - [Using the Journal Component](#using-the-journal-component)
-  - [(De)Serializing events](#deserializing-events)
   - [Tags](#tags)
 - [Using the Journal Query Interface Component](#using-the-journal-query-interface-component)
 - [License](#license)
@@ -22,6 +22,12 @@ Akka Persistence Redis Plugin is a plugin for Akka persistence that provides sev
 
 This plugin stores data in a [redis](https://redis.io) database.
 
+## (De)Serializion
+
+The journal component saves serialized values into the database.
+It relies on the [Akka serialization extension](http://doc.akka.io/docs/akka/2.4/scala/serialization.html).
+Custom serialization can be added to handle you data model elements as you wish.
+
 ## Using the Journal Component
 
 To use the journal component, you need to enable it in your configuration. To use the default settings, simply add this line:
@@ -29,13 +35,6 @@ To use the journal component, you need to enable it in your configuration. To us
 ```scala
 akka.persistence.journal.plugin = "akka-persistence-redis.journal"
 ```
-
-### (De)Serializing events
-
-The journal component saves Json serialized values into the database.
-Only events of type `spray.json.JsValue` received by the journal are stored.
-You can use event adapters to make the (de)serialization process automatic.
-By binding the event adapter to the classes of your data model in your configuration.
 
 ### Tags
 

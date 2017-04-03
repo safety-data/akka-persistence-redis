@@ -21,6 +21,8 @@ package redis
 
 import util.ByteString
 
+import akka.serialization.SerializationExtension
+
 import akka.persistence.redis._
 import RedisKeys._
 
@@ -42,8 +44,6 @@ import scala.concurrent.Future
 
 import com.typesafe.config.Config
 
-import spray.json._
-
 private object EventsByTagPublisher {
 
   def props(conf: Config, redis: RedisClient, tag: String, offset: Long, refreshInterval: FiniteDuration): Props =
@@ -51,7 +51,7 @@ private object EventsByTagPublisher {
 
   case object Continue
   case class EventRef(sequenceNr: Long, persistenceId: String)
-  case class Events(nb: Int, events: Seq[(String, Option[JournalEntry])])
+  case class Events(nb: Int, events: Seq[(String, Option[PersistentRepr])])
 
   implicit object eventRefDeserializer extends ByteStringDeserializer[EventRef] {
     private val EventRe = "(\\d+):(.*)".r
@@ -75,6 +75,8 @@ private class EventsByTagPublisher(conf: Config, redis: RedisClient, tag: String
   private val max = conf.getInt("max")
 
   private var buf = Vector.empty[EventEnvelope2]
+
+  implicit val serialization = SerializationExtension(context.system)
 
   import context.dispatcher
 
@@ -118,7 +120,7 @@ private class EventsByTagPublisher(conf: Config, redis: RedisClient, tag: String
     case Events(nb, events) =>
       context.become(waiting())
       buf ++= events.zipWithIndex.flatMap {
-        case ((persistenceId, Some(JournalEntry(sequenceNr, false, manifest, event, _))), idx) =>
+        case ((persistenceId, Some(repr @ PersistentRepr(event, sequenceNr))), idx) if !repr.deleted =>
           Some(EventEnvelope2(Sequence(currentOffset + idx), persistenceId, sequenceNr, event))
         case ((persistenceId, _), idx) =>
           None
@@ -138,10 +140,10 @@ private class EventsByTagPublisher(conf: Config, redis: RedisClient, tag: String
       val f = for {
         refs <- redis.lrange[EventRef](tagKey(tag), currentOffset, currentOffset + max - 1)
         trans = redis.transaction()
-        events = Future.sequence(refs.map { case EventRef(sequenceNr, persistenceId) => trans.zrangebyscore[JsValue](journalKey(persistenceId), Limit(sequenceNr), Limit(sequenceNr)).map(persistenceId -> _) })
+        events = Future.sequence(refs.map { case EventRef(sequenceNr, persistenceId) => trans.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(sequenceNr), Limit(sequenceNr)).map(persistenceId -> _) })
         _ = trans.exec()
         events <- events
-      } yield self ! Events(refs.size, events.map { case (id, json) => (id, json.headOption.map(_.convertTo[JournalEntry])) })
+      } yield self ! Events(refs.size, events.map { case (id, json) => (id, json.headOption.map(persistentFromBytes(_))) })
 
       for (t <- f.failed) {
         log.error(t, f"Error while querying events for tag $tag")

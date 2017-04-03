@@ -21,6 +21,8 @@ package redis
 
 import util.ByteString
 
+import akka.serialization.SerializationExtension
+
 import akka.persistence.redis._
 import RedisKeys._
 
@@ -44,8 +46,6 @@ import scala.util.Try
 
 import com.typesafe.config.Config
 
-import spray.json._
-
 private object EventsByPersistenceIdPublisher {
 
   def props(conf: Config, redis: RedisClient, persistenceId: String, from: Long, to: Long, refreshInterval: FiniteDuration): Props =
@@ -53,7 +53,7 @@ private object EventsByPersistenceIdPublisher {
 
   case object Continue
   case class EventRef(sequenceNr: Long, persistenceId: String)
-  case class Events(events: Seq[JournalEntry])
+  case class Events(events: Seq[PersistentRepr])
 
   implicit object eventRefDeserializer extends ByteStringDeserializer[EventRef] {
     private val EventRe = "(\\d+):(.*)".r
@@ -69,6 +69,8 @@ private class EventsByPersistenceIdPublisher(conf: Config, redis: RedisClient, p
     extends ActorPublisher[EventEnvelope] with ActorLogging {
 
   import EventsByPersistenceIdPublisher._
+
+  implicit val serialization = SerializationExtension(context.system)
 
   object Long {
     def unapply(bs: ByteString): Option[Long] =
@@ -126,9 +128,9 @@ private class EventsByPersistenceIdPublisher(conf: Config, redis: RedisClient, p
     case Events(events) =>
       context.become(waiting())
       val (evts, maxSequenceNr) = events.foldLeft(Seq.empty[EventEnvelope] -> currentSequenceNr) {
-        case ((evts, _), JournalEntry(sequenceNr, false, manifest, event, _)) =>
+        case ((evts, _), repr @ PersistentRepr(event, sequenceNr)) if !repr.deleted =>
           (evts :+ EventEnvelope(sequenceNr, persistenceId, sequenceNr, event), sequenceNr + 1)
-        case ((evts, _), JournalEntry(sequenceNr, _, _, _, _)) =>
+        case ((evts, _), PersistentRepr(_, sequenceNr)) =>
           (evts, sequenceNr + 1)
 
       }
@@ -147,8 +149,8 @@ private class EventsByPersistenceIdPublisher(conf: Config, redis: RedisClient, p
       if (currentSequenceNr < to) {
         context.become(querying())
         val f = for {
-          events <- redis.zrangebyscore[JsValue](journalKey(persistenceId), Limit(currentSequenceNr), Limit(math.min(currentSequenceNr + max - 1, to)))
-        } yield self ! Events(events.map(_.convertTo[JournalEntry]))
+          events <- redis.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(currentSequenceNr), Limit(math.min(currentSequenceNr + max - 1, to)))
+        } yield self ! Events(events.map(persistentFromBytes(_)))
 
         for (t <- f.failed) {
           log.error(t, "Error while querying events by persistence identifier")

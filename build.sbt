@@ -8,8 +8,6 @@ lazy val dependencies = Seq(
   "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
   "com.typesafe.akka" %% "akka-persistence-query-experimental" % akkaVersion,
   "com.github.etaty" %% "rediscala" % redisScalaVersion,
-  "io.spray" %%  "spray-json" % "1.3.3",
-  "org.scalatest" %% "scalatest" % "3.0.1" % "test",
   "com.typesafe.akka" %% "akka-persistence-tck" % akkaVersion % "test")
 
 lazy val root = project.in(file("."))
@@ -21,6 +19,7 @@ lazy val root = project.in(file("."))
     version := "0.1.0-SNAPSHOT",
     scalaVersion := "2.12.1",
     libraryDependencies ++= dependencies,
+    parallelExecution in Test := false,
     scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits", "-implicits-show-all", "-diagrams", "-doc-title", "Akka Persistence Redis API Documentation", "-doc-version", version.value, "-doc-footer", "Copyright © 2017 Safety Data"),
     autoAPIMappings := true,
     scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked"))

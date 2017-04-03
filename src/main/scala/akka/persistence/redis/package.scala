@@ -15,22 +15,39 @@
  */
 package akka.persistence
 
-import akka.util.ByteString
+import akka.util._
+
+import akka.serialization.Serialization
 
 import _root_.redis._
 
-import spray.json._
-import DefaultJsonProtocol._
+import java.nio.ByteOrder
 
 package object redis {
 
-  implicit val journalEntryFormat = jsonFormat5(JournalEntry)
+  def persistentToBytes(p: PersistentRepr)(implicit serialization: Serialization): Array[Byte] = serialization.serialize(p).get
 
-  implicit object jsValueFormatter extends ByteStringFormatter[JsValue] {
-    def serialize(json: JsValue): ByteString =
-      ByteString(json.compactPrint)
-    def deserialize(bs: ByteString): JsValue =
-      bs.utf8String.parseJson
+  def persistentFromBytes(a: Array[Byte])(implicit serialization: Serialization): PersistentRepr = serialization.deserialize(a, classOf[PersistentRepr]).get
+
+  implicit object SnapshotEntrySerializer extends ByteStringFormatter[SnapshotEntry] {
+
+    def deserialize(bs: ByteString): SnapshotEntry = {
+      val iterator = bs.iterator
+      val sequenceNr = iterator.getLong(ByteOrder.BIG_ENDIAN)
+      val timestamp = iterator.getLong(ByteOrder.BIG_ENDIAN)
+      val snapshot = iterator.toByteString
+      SnapshotEntry(sequenceNr, timestamp, snapshot)
+    }
+
+    def serialize(data: SnapshotEntry): ByteString = data match {
+      case SnapshotEntry(sequenceNr, timestamp, snapshot) =>
+        val builder = new ByteStringBuilder
+        builder.putLong(sequenceNr)(ByteOrder.BIG_ENDIAN)
+        builder.putLong(timestamp)(ByteOrder.BIG_ENDIAN)
+        builder.append(snapshot)
+        builder.result
+    }
+
   }
 
 }

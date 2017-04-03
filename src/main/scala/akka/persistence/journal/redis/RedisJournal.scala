@@ -24,6 +24,8 @@ import akka.persistence.redis._
 import akka.actor._
 import akka.util.ByteString
 
+import akka.serialization.SerializationExtension
+
 import _root_.redis._
 import commands._
 import api._
@@ -40,10 +42,7 @@ import scala.util.{
 
 import scala.collection.immutable.Seq
 
-import spray.json._
-import DefaultJsonProtocol._
-
-/** Stores events inside a redis database. Understood events are of type [[spray.json.JsValue]].
+/** Stores events inside a redis database.
  *
  *  For each persistence id `persistenceId`, it creates two keys:
  *   - `journal:persisted:persistenceId` contains a sorted set of events (sorted by sequence number)
@@ -76,6 +75,8 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
 
   implicit def ec = context.system.dispatcher
 
+  implicit val serialization = SerializationExtension(context.system)
+
   var redis: RedisClient = _
 
   override def preStart() {
@@ -94,10 +95,10 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
 
   def asyncReplayMessages(persistenceId: String, fromSequenceNr: Long, toSequenceNr: Long, max: Long)(recoveryCallback: PersistentRepr => Unit): Future[Unit] =
     for {
-      entries <- redis.zrangebyscore[JsValue](journalKey(persistenceId), Limit(fromSequenceNr), Limit(toSequenceNr), Some(0L -> max)).map(_.map(_.convertTo[JournalEntry]))
+      entries <- redis.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(fromSequenceNr), Limit(toSequenceNr), Some(0L -> max))
     } yield for {
-      JournalEntry(sequenceNr, deleted, manifest, event, writerUuid) <- entries
-    } recoveryCallback(PersistentRepr(event, sequenceNr, persistenceId, manifest, deleted, writerUuid = writerUuid))
+      entry <- entries
+    } recoveryCallback(persistentFromBytes(entry))
 
   def asyncDeleteMessagesTo(persistenceId: String, toSequenceNr: Long): Future[Unit] =
     for {
@@ -133,11 +134,10 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
   }
 
   private def asyncWriteOperation(transaction: TransactionBuilder, pr: PersistentRepr): Future[Unit] =
-    extract(pr.payload) match {
-      case Success((event, tags)) =>
-        val journal = JournalEntry(pr.sequenceNr, pr.deleted, pr.manifest, event, pr.writerUuid)
+    Try(extract(pr)) match {
+      case Success((entry, tags)) =>
         transaction
-          .zadd(journalKey(pr.persistenceId), (pr.sequenceNr, journal.toJson))
+          .zadd(journalKey(pr.persistenceId), (pr.sequenceNr, entry))
           // notify about new event being appended for this persistence id
           .zip(transaction.publish(journalChannel(pr.persistenceId), pr.sequenceNr))
           .zip(Future.sequence(tags.map(t => transaction
@@ -146,16 +146,14 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
             // notify about new event being appended for this tag
             .zip(transaction.publish(tagsChannel, t)))))
           .map(_ => ())
-      case Failure(e) => Future.failed(e)
+      case Failure(t) => Future.failed(t)
     }
 
-  private def extract(payload: Any): Try[(JsValue, Set[String])] = payload match {
-    case Tagged(event: JsValue, tags) =>
-      Success(event -> tags)
-    case event: JsValue =>
-      Success(event -> Set.empty[String])
-    case _ =>
-      Failure(new Exception(f"Cannot extract event $payload"))
+  private def extract(pr: PersistentRepr): (Array[Byte], Set[String]) = pr.payload match {
+    case Tagged(event, tags) =>
+      persistentToBytes(pr.withPayload(event)) -> tags
+    case event =>
+      persistentToBytes(pr) -> Set.empty[String]
   }
 
 }

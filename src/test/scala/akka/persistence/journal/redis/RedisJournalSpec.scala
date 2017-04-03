@@ -17,25 +17,28 @@ package akka.persistence
 package journal
 package redis
 
+import akka.persistence.redis._
+
+import _root_.redis._
+
 import com.typesafe.config.ConfigFactory
+
+import scala.concurrent._
+import scala.concurrent.duration._
 
 class RedisJournalSpec extends JournalSpec(
   config = ConfigFactory.parseString(
     """
     |akka.persistence.journal.plugin = "akka-persistence-redis.journal"
-    |
-    |akka-persistence-redis {
-    |  journal {
-    |    event-adapters {
-    |      serializer = "akka.persistence.journal.redis.StringSerializer"
-    |    }
-    |    event-adapter-bindings {
-    |      "java.lang.String" = serializer
-    |      "spray.json.JsValue" = serializer
-    |    }
-    |  }
-    |}""".stripMargin)) {
+    |""".stripMargin)) {
 
   override def supportsRejectingNonSerializableObjects: CapabilityFlag =
     CapabilityFlag.on
+
+  override def afterAll(): Unit = {
+    val redis = RedisUtils.create(ConfigFactory.load.getConfig("akka-persistence-redis"))
+    Await.result(redis.eval("return redis.call('del', unpack(redis.call('keys', ARGV[1])))", args = Seq("journal:*")), 10.seconds)
+    super.afterAll()
+  }
+
 }
