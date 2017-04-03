@@ -20,7 +20,7 @@ lazy val root = project.in(file("."))
     scalaVersion := "2.12.1",
     libraryDependencies ++= dependencies,
     parallelExecution in Test := false,
-    scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits", "-implicits-show-all", "-diagrams", "-doc-title", "Akka Persistence Redis API Documentation", "-doc-version", version.value, "-doc-footer", "Copyright © 2017 Safety Data"),
+    scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits", "-implicits-show-all", "-diagrams", "-doc-title", "Akka Persistence Redis", "-doc-version", version.value, "-doc-footer", "Copyright © 2017 Safety Data"),
     autoAPIMappings := true,
     scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked"))
   .settings(scalariformSettings)

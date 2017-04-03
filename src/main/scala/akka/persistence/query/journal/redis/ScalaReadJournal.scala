@@ -71,7 +71,6 @@ class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config
 
   /** Returns the live stream of events with a given tag.
    *  The events are sorted in the order they occurred, you can rely on it.
-   *  Events are retrned as [[spray.json.JsValue JsValue]]s.
    */
   def eventsByTag(tag: String, offset: Offset): Source[EventEnvelope2, NotUsed] = offset match {
     case Sequence(offsetValue) =>
