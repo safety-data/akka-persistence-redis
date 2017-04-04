@@ -1,6 +1,7 @@
 # Akka Persistence Redis Plugin
 [![Build Status](https://travis-ci.org/safety-data/akka-persistence-redis.svg?branch=master)](https://travis-ci.org/safety-data/akka-persistence-redis)
 
+- [Scaladoc](https://safety-data.github.io/akka-persistence-redis/latest/api/index.html)
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -76,7 +77,7 @@ val readJournal = PersistenceQuery(system)
   .readJournalFor[ScalaReadJournal]("akka-persistence-redis.read-journal")
 ```
 
-For more details on the available capabilities of the journal query, please refer to the API documentation.
+For more details on the available capabilities of the journal query, please refer to the [API documentation](https://safety-data.github.io/akka-persistence-redis/latest/api/akka/persistence/query/journal/redis/ScalaReadJournal.html).
 
 ## Database Configuration
 

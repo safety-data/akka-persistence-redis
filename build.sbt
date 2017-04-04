@@ -15,12 +15,6 @@ lazy val publishSettings = Seq(
   }).value,
   pomIncludeRepository := { x => false },
   pomExtra := (
-    <scm>
-      <url>https://github.com/safety-data/akka-persistence-redis</url>
-      <connection>scm:git:git://github.com/safety-data/akka-persistence-redis.git</connection>
-      <developerConnection>scm:git:git@github.com:safety-data/akka-persistence-redis.git</developerConnection>
-      <tag>HEAD</tag>
-    </scm>
     <developers>
       <developer>
         <id>satabin</id>
@@ -39,6 +33,10 @@ lazy val publishSettings = Seq(
     )
   )
 
+lazy val siteSettings = Seq(
+  ghpagesNoJekyll := true,
+  git.remoteRepo := scmInfo.value.get.connection)
+
 lazy val dependencies = Seq(
   "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
   "com.typesafe.akka" %% "akka-persistence-query-experimental" % akkaVersion,
@@ -46,7 +44,9 @@ lazy val dependencies = Seq(
   "com.typesafe.akka" %% "akka-persistence-tck" % akkaVersion % "test")
 
 lazy val root = project.in(file("."))
+  .enablePlugins(SiteScaladocPlugin, GhpagesPlugin)
   .settings(publishSettings: _*)
+  .settings(siteSettings: _*)
   .settings(
     resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
     resolvers += "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/",
@@ -55,6 +55,7 @@ lazy val root = project.in(file("."))
     version := "0.1.0-SNAPSHOT",
     licenses += ("The Apache Software License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     homepage := Some(url("https://github.com/safety-data/akka-persistence-redis")),
+    scmInfo := Some(ScmInfo(url("https://github.com/safety-data/akka-persistence-redis"), "git@github.com:safety-data/akka-persistence-redis.git")),
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.12.1", "2.11.8"),
     libraryDependencies ++= dependencies,
