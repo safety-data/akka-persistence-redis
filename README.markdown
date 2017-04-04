@@ -6,7 +6,8 @@
 
 
 - [What is it?](#what-is-it)
-- [(De)Serializion](#deserializion)
+- [Installation](#installation)
+- [(De)Serialization](#deserialization)
 - [Using the Journal Component](#using-the-journal-component)
   - [Tags](#tags)
 - [Using the Snapshot Component](#using-the-snapshot-component)
@@ -25,7 +26,18 @@ Akka Persistence Redis Plugin is a plugin for [Akka persistence](http://doc.akka
 
 This plugin stores data in a [redis](https://redis.io) database.
 
-## (De)Serializion
+## Installation
+
+The plugin is compiled with Scala 2.12 and 2.11 and are deployed on maven sonatype repositories.
+To use the plugin add this to your sbt build file :
+
+```scala
+libraryDependencies += "com.safety-data" %% "akka-persistence-redis" % "0.1.0-SNAPSHOT"
+```
+
+_Note_: for snapshot versions you will need to add the sonatype snapshot resolver.
+
+## (De)Serialization
 
 The journal and snapshot components save serialized values into the database.
 They rely on the [Akka serialization extension](http://doc.akka.io/docs/akka/2.4/scala/serialization.html).
