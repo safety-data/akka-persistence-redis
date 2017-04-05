@@ -41,7 +41,8 @@ lazy val dependencies = Seq(
   "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
   "com.typesafe.akka" %% "akka-persistence-query-experimental" % akkaVersion,
   "com.github.etaty" %% "rediscala" % redisScalaVersion,
-  "com.typesafe.akka" %% "akka-persistence-tck" % akkaVersion % "test")
+  "com.typesafe.akka" %% "akka-persistence-tck" % akkaVersion % "test",
+  "com.github.pocketberserker" %% "scodec-msgpack" % "0.6.0" % "test")
 
 lazy val root = project.in(file("."))
   .enablePlugins(SiteScaladocPlugin, GhpagesPlugin)

@@ -23,6 +23,8 @@ import _root_.redis._
 
 import com.typesafe.config.Config
 
+import scala.collection.JavaConverters._
+
 object RedisUtils {
 
   def host(conf: Config) = conf.getString("redis.host")
@@ -34,9 +36,24 @@ object RedisUtils {
   def password(conf: Config) = if (conf.hasPath("redis.password")) Some(conf.getString("redis.password")) else None
 
   def create(conf: Config)(implicit system: ActorSystem): RedisClient =
-    new RedisClient(host = host(conf),
-      port = port(conf),
-      db = database(conf),
-      password = password(conf))
+    conf.getString("redis.mode") match {
+      case "simple" =>
+        new RedisClient(host = host(conf),
+          port = port(conf),
+          db = database(conf),
+          password = password(conf))
+
+      case "sentinel" =>
+        val sentinels =
+          conf
+            .getConfigList("redis.sentinels")
+            .asScala
+            .map(c => (c.getString("host"), c.getInt("port")))
+            .toSeq
+        new SentinelMonitoredRedisClient(sentinels = sentinels, master = conf.getString("redis.master"), db = database(conf), password = password(conf)).redisClient
+
+      case mode =>
+        throw new Exception(f"Unsupported redis mode $mode")
+    }
 
 }

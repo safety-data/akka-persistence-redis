@@ -83,6 +83,10 @@ For more details on the available capabilities of the journal query, please refe
 
 This plugin uses [rediscala](https://github.com/etaty/rediscala) to connect to redis databases and is configured using [Typesafe config](https://github.com/typesafehub/config/) library.
 
+Akka persistence redis plugin supports following modes for connecting to Redis:
+ - simple
+ - sentinel
+
 A default database configuration is used for all components, under the path `akka-persistence-redis.redis`. You may either override this path to apply changes to all components, or override it locally for each component.
 
 See the [reference configuration](src/main/resources/reference.conf) for more details on possible configuration.
