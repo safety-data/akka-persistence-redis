@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Akka Persistence Redis 0.1.0-SNAPSHOT - akka.persistence.journal.redis.RedisJournal</title>
-          <meta name="description" content="Akka Persistence Redis 0.1.0 - SNAPSHOT - akka.persistence.journal.redis.RedisJournal" />
-          <meta name="keywords" content="Akka Persistence Redis 0.1.0 SNAPSHOT akka.persistence.journal.redis.RedisJournal" />
+          <title>Akka Persistence Redis 0.1.0 - akka.persistence.journal.redis.RedisJournal</title>
+          <meta name="description" content="Akka Persistence Redis 0.1.0 - akka.persistence.journal.redis.RedisJournal" />
+          <meta name="keywords" content="Akka Persistence Redis 0.1.0 akka.persistence.journal.redis.RedisJournal" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.1.0-SNAPSHOT</span></span>
+        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.1.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -178,7 +178,7 @@
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Stores events inside a redis database.</p><p> For each persistence id <code>persistenceId</code>, it creates two keys:</p><ul><li><code>journal:persisted:persistenceId</code> contains a sorted set of events (sorted by sequence number)</li><li><code>journal:persisted:persistenceId:highestSequenceNr</code> contains the highest sequence number</li></ul><p> For each tag <code>t</code>, it creates a key <code>journal:tag:t</code> which contains the ordered list of pair (sequenceNr, persistenceId).
- Order in this list is the order in which events with the given tag <code>t</code> were recorded.</p><p> It also maintains following keys:</p><ul><li><code>journal:persistenceIds</code> which is a set of persistence identifiers.</li><li><code>journal:tags</code> which is the set of all tags.</li></ul><p> Events are stored in json format.</p><p> Using the redis PubSub mechanism, this journal notifies whoever is interested on following channels:</p><ul><li><code>journal:channel:ids</code> any new persisted identifier is published</li><li><code>journal:channel:persisted:&lt;id&gt;</code> anytime a new event is appended to a persistence id <code>&lt;id&gt;</code>, the sequenceNr is published</li><li><code>journal:channel:tags</code> anytime a new event is appended to a tag, the tag name is published
+ Order in this list is the order in which events with the given tag <code>t</code> were recorded.</p><p> It also maintains following keys:</p><ul><li><code>journal:persistenceIds</code> which is a set of persistence identifiers.</li><li><code>journal:tags</code> which is the set of all tags.</li></ul><p> Using the redis PubSub mechanism, this journal notifies whoever is interested on following channels:</p><ul><li><code>journal:channel:ids</code> any new persisted identifier is published</li><li><code>journal:channel:persisted:&lt;id&gt;</code> anytime a new event is appended to a persistence id <code>&lt;id&gt;</code>, the sequenceNr is published</li><li><code>journal:channel:tags</code> anytime a new event is appended to a tag, the tag name is published
 </li></ul></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
