@@ -55,8 +55,6 @@ import scala.collection.immutable.Seq
  *   - `journal:persistenceIds` which is a set of persistence identifiers.
  *   - `journal:tags` which is the set of all tags.
  *
- *  Events are stored in json format.
- *
  *  Using the redis PubSub mechanism, this journal notifies whoever is interested on following channels:
  *   - `journal:channel:ids` any new persisted identifier is published
  *   - `journal:channel:persisted:<id>` anytime a new event is appended to a persistence id `<id>`, the sequenceNr is published
