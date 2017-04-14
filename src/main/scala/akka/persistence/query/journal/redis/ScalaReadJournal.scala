@@ -34,9 +34,9 @@ import _root_.redis._
 import scala.concurrent.duration._
 
 class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config) extends ReadJournal
-    with EventsByTagQuery2
+    with EventsByTagQuery
     with EventsByPersistenceIdQuery
-    with AllPersistenceIdsQuery
+    with PersistenceIdsQuery
     with CurrentPersistenceIdsQuery {
 
   val redis = RedisUtils.create(conf)(system)
@@ -44,8 +44,8 @@ class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config
   /** Returns the live stream of persisted identifiers.
    *  Identifiers may appear several times in the stream.
    */
-  def allPersistenceIds(): Source[String, NotUsed] = {
-    val props = AllPersistenceIdsPublisher.props(conf, redis, conf.getDuration("refresh-interval", MILLISECONDS).milliseconds)
+  def persistenceIds(): Source[String, NotUsed] = {
+    val props = PersistenceIdsPublisher.props(conf, redis, conf.getDuration("refresh-interval", MILLISECONDS).milliseconds)
     Source.actorPublisher[String](props)
       .mapMaterializedValue(_ => NotUsed)
   }
@@ -54,7 +54,7 @@ class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config
    *  This stream is not live, once, the identifiers were all returned, it is closed.
    */
   def currentPersistenceIds(): Source[String, NotUsed] = {
-    val props = PersistenceIdsPublisher.props(redis, conf.getDuration("refresh-interval", MILLISECONDS).milliseconds)
+    val props = CurrentPersistenceIdsPublisher.props(redis, conf.getDuration("refresh-interval", MILLISECONDS).milliseconds)
     Source.actorPublisher[String](props)
       .mapMaterializedValue(_ => NotUsed)
   }
@@ -72,14 +72,14 @@ class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config
   /** Returns the live stream of events with a given tag.
    *  The events are sorted in the order they occurred, you can rely on it.
    */
-  def eventsByTag(tag: String, offset: Offset): Source[EventEnvelope2, NotUsed] = offset match {
+  def eventsByTag(tag: String, offset: Offset): Source[EventEnvelope, NotUsed] = offset match {
     case Sequence(offsetValue) =>
       val props = EventsByTagPublisher.props(conf, redis, tag, offsetValue, conf.getDuration("refresh-interval", MILLISECONDS).milliseconds)
-      Source.actorPublisher[EventEnvelope2](props)
+      Source.actorPublisher[EventEnvelope](props)
         .mapMaterializedValue(_ => NotUsed)
     case NoOffset =>
       val props = EventsByTagPublisher.props(conf, redis, tag, 0, conf.getDuration("refresh-interval", MILLISECONDS).milliseconds)
-      Source.actorPublisher[EventEnvelope2](props)
+      Source.actorPublisher[EventEnvelope](props)
         .mapMaterializedValue(_ => NotUsed)
     case _ =>
       throw new IllegalArgumentException("Redis does not support " + offset.getClass.getName + " offsets")

@@ -129,7 +129,7 @@ private class EventsByPersistenceIdPublisher(conf: Config, redis: RedisClient, p
       context.become(waiting())
       val (evts, maxSequenceNr) = events.foldLeft(Seq.empty[EventEnvelope] -> currentSequenceNr) {
         case ((evts, _), repr @ PersistentRepr(event, sequenceNr)) if !repr.deleted =>
-          (evts :+ EventEnvelope(sequenceNr, persistenceId, sequenceNr, event), sequenceNr + 1)
+          (evts :+ EventEnvelope(Sequence(sequenceNr), persistenceId, sequenceNr, event), sequenceNr + 1)
         case ((evts, _), PersistentRepr(_, sequenceNr)) =>
           (evts, sequenceNr + 1)
 

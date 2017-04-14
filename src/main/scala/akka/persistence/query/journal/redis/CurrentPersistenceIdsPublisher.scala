@@ -23,10 +23,8 @@ import akka.persistence.redis._
 import RedisKeys._
 
 import _root_.redis._
-import api.pubsub._
 
 import actor._
-import SupervisorStrategy._
 import stream.scaladsl._
 import stream.actor._
 import ActorPublisherMessage.{
@@ -38,16 +36,14 @@ import scala.reflect._
 
 import scala.concurrent.duration._
 
-import com.typesafe.config.Config
-
-private object AllPersistenceIdsPublisher {
-  def props(conf: Config, redis: RedisClient, refreshInterval: FiniteDuration): Props =
-    Props(classOf[AllPersistenceIdsPublisher], conf, redis, refreshInterval)
+private object CurrentPersistenceIdsPublisher {
+  def props(redis: RedisClient, refreshInterval: FiniteDuration): Props =
+    Props(classOf[CurrentPersistenceIdsPublisher], redis, refreshInterval)
 }
 
-private class AllPersistenceIdsPublisher(conf: Config, redis: RedisClient, refreshInterval: FiniteDuration) extends ActorPublisher[String] with ActorLogging {
+private class CurrentPersistenceIdsPublisher(redis: RedisClient, refreshInterval: FiniteDuration) extends ActorPublisher[String] with ActorLogging {
 
-  private case object Continue
+  private case class Continue(index: Int)
 
   import context.dispatcher
 
@@ -56,24 +52,16 @@ private class AllPersistenceIdsPublisher(conf: Config, redis: RedisClient, refre
   val continueTask = context.system.scheduler.schedule(
     refreshInterval, refreshInterval, self, Continue)
 
-  override val supervisorStrategy =
-    OneForOneStrategy() {
-      case _: Exception => Escalate
-    }
-
-  val subscription = context.actorOf(Props(classOf[PublisherSubscription], conf, self, identifiersChannel), name = "subscription")
-
-  log.debug("Starting AllPersistenceIdsPublisher")
+  log.debug("Starting PersistenceIdsPublisher")
 
   override def postStop(): Unit = {
-    log.debug("Stopping AllPersistenceIdsPublisher")
+    log.debug("Stopping PersistenceIdsPublisher")
     continueTask.cancel()
-    context.stop(subscription)
   }
 
-  override def receive = init()
+  def receive = waiting()
 
-  def init(): Receive = {
+  def waiting(): Receive = {
     case Request(_) =>
       log.debug("Request received")
       query(true)
@@ -81,27 +69,6 @@ private class AllPersistenceIdsPublisher(conf: Config, redis: RedisClient, refre
     case Continue =>
       log.debug("Continue received")
       query(false)
-
-    case Message(`identifiersChannel`, bs) =>
-      log.debug("Message received")
-      buf :+= bs.utf8String
-      deliverBuf()
-
-    case Cancel =>
-      log.debug("Cancel received")
-      context.stop(self)
-
-  }
-
-  def waiting(): Receive = {
-    case Continue =>
-      log.debug("Continue received")
-      deliverBuf()
-
-    case Message(`identifiersChannel`, bs) =>
-      log.debug("Message received")
-      buf :+= bs.utf8String
-      deliverBuf()
 
     case Cancel =>
       log.debug("Cancel received")
@@ -112,7 +79,7 @@ private class AllPersistenceIdsPublisher(conf: Config, redis: RedisClient, refre
 
   def querying(): Receive = {
     case Cursor(idx, StringSeq(data)) =>
-      context.become(if (idx == 0) waiting() else init())
+      context.become(waiting())
       index = idx
       buf ++= data
       deliverBuf()
@@ -144,6 +111,10 @@ private class AllPersistenceIdsPublisher(conf: Config, redis: RedisClient, refre
         buf foreach onNext
         buf = Vector.empty
       }
+      if (buf.isEmpty && index <= 0) {
+        onCompleteThenStop()
+      }
     }
 
 }
+

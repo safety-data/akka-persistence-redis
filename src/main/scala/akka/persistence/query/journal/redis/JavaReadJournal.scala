@@ -24,13 +24,13 @@ import stream.javadsl._
 import javadsl._
 
 class JavaReadJournal private[redis] (scalaReadJournal: ScalaReadJournal) extends ReadJournal
-    with EventsByTagQuery2
+    with EventsByTagQuery
     with EventsByPersistenceIdQuery
-    with AllPersistenceIdsQuery
+    with PersistenceIdsQuery
     with CurrentPersistenceIdsQuery {
 
-  def allPersistenceIds(): Source[String, NotUsed] =
-    scalaReadJournal.allPersistenceIds().asJava
+  def persistenceIds(): Source[String, NotUsed] =
+    scalaReadJournal.persistenceIds().asJava
 
   def currentPersistenceIds(): Source[String, NotUsed] =
     scalaReadJournal.currentPersistenceIds().asJava
@@ -38,7 +38,7 @@ class JavaReadJournal private[redis] (scalaReadJournal: ScalaReadJournal) extend
   def eventsByPersistenceId(persistenceId: String, fromSequenceNr: Long, toSequenceNr: Long): Source[EventEnvelope, NotUsed] =
     scalaReadJournal.eventsByPersistenceId(persistenceId, fromSequenceNr, toSequenceNr).asJava
 
-  def eventsByTag(tag: String, offset: Offset): Source[EventEnvelope2, NotUsed] =
+  def eventsByTag(tag: String, offset: Offset): Source[EventEnvelope, NotUsed] =
     scalaReadJournal.eventsByTag(tag, offset).asJava
 
 }

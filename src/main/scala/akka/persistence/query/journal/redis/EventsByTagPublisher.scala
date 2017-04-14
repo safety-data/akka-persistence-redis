@@ -64,7 +64,7 @@ private object EventsByTagPublisher {
 }
 
 private class EventsByTagPublisher(conf: Config, redis: RedisClient, tag: String, offset: Long, refreshInterval: FiniteDuration)
-    extends ActorPublisher[EventEnvelope2] with ActorLogging {
+    extends ActorPublisher[EventEnvelope] with ActorLogging {
 
   import EventsByTagPublisher._
 
@@ -74,7 +74,7 @@ private class EventsByTagPublisher(conf: Config, redis: RedisClient, tag: String
 
   private val max = conf.getInt("max")
 
-  private var buf = Vector.empty[EventEnvelope2]
+  private var buf = Vector.empty[EventEnvelope]
 
   implicit val serialization = SerializationExtension(context.system)
 
@@ -121,7 +121,7 @@ private class EventsByTagPublisher(conf: Config, redis: RedisClient, tag: String
       context.become(waiting())
       buf ++= events.zipWithIndex.flatMap {
         case ((persistenceId, Some(repr @ PersistentRepr(event, sequenceNr))), idx) if !repr.deleted =>
-          Some(EventEnvelope2(Sequence(currentOffset + idx), persistenceId, sequenceNr, event))
+          Some(EventEnvelope(Sequence(currentOffset + idx), persistenceId, sequenceNr, event))
         case ((persistenceId, _), idx) =>
           None
       }
