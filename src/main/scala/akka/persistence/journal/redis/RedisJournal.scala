@@ -138,11 +138,13 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
           .zadd(journalKey(pr.persistenceId), (pr.sequenceNr, entry))
           // notify about new event being appended for this persistence id
           .zip(transaction.publish(journalChannel(pr.persistenceId), pr.sequenceNr))
-          .zip(Future.sequence(tags.map(t => transaction
-            .rpush(tagKey(t), f"${pr.sequenceNr}:${pr.persistenceId}")
-            .zip(transaction.sadd(tagsKey, t))
-            // notify about new event being appended for this tag
-            .zip(transaction.publish(tagsChannel, t)))))
+          .zip(Future.sequence(tags.map { t =>
+            transaction
+              .rpush(tagKey(t), f"${pr.sequenceNr}:${pr.persistenceId}")
+              .zip(transaction.sadd(tagsKey, t))
+              // notify about new event being appended for this tag
+              .zip(transaction.publish(tagsChannel, t))
+          }))
           .map(_ => ())
       case Failure(t) => Future.failed(t)
     }

@@ -34,3 +34,13 @@ class RedisReadJournalProvider(system: ExtendedActorSystem, config: Config)
     new ScalaReadJournal(system, config)
 
 }
+
+object RedisReadJournal {
+  /** The default identifier for [[RedisReadJournal]] to be used with
+   *  [[akka.persistence.query.PersistenceQuery#readJournalFor]].
+   *
+   *  The value is `"akka.persistence.query.journal.leveldb"` and corresponds
+   *  to the absolute path to the read journal configuration entry.
+   */
+  final val Identifier = "akka-persistence-redis.read-journal"
+}
