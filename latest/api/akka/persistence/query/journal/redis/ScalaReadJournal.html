@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Akka Persistence Redis 0.1.0 - akka.persistence.query.journal.redis.ScalaReadJournal</title>
-          <meta name="description" content="Akka Persistence Redis 0.1.0 - akka.persistence.query.journal.redis.ScalaReadJournal" />
-          <meta name="keywords" content="Akka Persistence Redis 0.1.0 akka.persistence.query.journal.redis.ScalaReadJournal" />
+          <title>Akka Persistence Redis 0.2.0 - akka.persistence.query.journal.redis.ScalaReadJournal</title>
+          <meta name="description" content="Akka Persistence Redis 0.2.0 - akka.persistence.query.journal.redis.ScalaReadJournal" />
+          <meta name="keywords" content="Akka Persistence Redis 0.2.0 akka.persistence.query.journal.redis.ScalaReadJournal" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.1.0</span></span>
+        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.2.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -169,6 +169,12 @@
                         </a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
+                        <a class="object" href="RedisReadJournal$.html" title=""></a>
+                        <a href="RedisReadJournal$.html" title="">
+                          RedisReadJournal
+                        </a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
                         <a class="class" href="RedisReadJournalProvider.html" title=""></a>
                         <a href="RedisReadJournalProvider.html" title="">
                           RedisReadJournalProvider
@@ -202,7 +208,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">ScalaReadJournal</span><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.ReadJournal" class="extype" target="_top">ReadJournal</a> with <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.EventsByTagQuery2" class="extype" target="_top">EventsByTagQuery2</a> with <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.EventsByPersistenceIdQuery" class="extype" target="_top">EventsByPersistenceIdQuery</a> with <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.AllPersistenceIdsQuery" class="extype" target="_top">AllPersistenceIdsQuery</a> with <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery" class="extype" target="_top">CurrentPersistenceIdsQuery</a></span>
+        <span class="name">ScalaReadJournal</span><span class="result"> extends <span class="extype" name="akka.persistence.query.scaladsl.ReadJournal">ReadJournal</span> with <span class="extype" name="akka.persistence.query.scaladsl.EventsByTagQuery">EventsByTagQuery</span> with <span class="extype" name="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery">EventsByPersistenceIdQuery</span> with <span class="extype" name="akka.persistence.query.scaladsl.PersistenceIdsQuery">PersistenceIdsQuery</span> with <span class="extype" name="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery">CurrentPersistenceIdsQuery</span> with <span class="extype" name="akka.persistence.query.scaladsl.CurrentEventsByPersistenceIdQuery">CurrentEventsByPersistenceIdQuery</span> with <span class="extype" name="akka.persistence.query.scaladsl.CurrentEventsByTagQuery">CurrentEventsByTagQuery</span></span>
       </span>
       </h4>
 
@@ -211,12 +217,12 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery" class="extype" target="_top">CurrentPersistenceIdsQuery</a>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.AllPersistenceIdsQuery" class="extype" target="_top">AllPersistenceIdsQuery</a>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.EventsByPersistenceIdQuery" class="extype" target="_top">EventsByPersistenceIdQuery</a>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.EventsByTagQuery2" class="extype" target="_top">EventsByTagQuery2</a>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.ReadJournal" class="extype" target="_top">ReadJournal</a>, <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="akka.persistence.query.scaladsl.CurrentEventsByTagQuery">CurrentEventsByTagQuery</span>, <span class="extype" name="akka.persistence.query.scaladsl.CurrentEventsByPersistenceIdQuery">CurrentEventsByPersistenceIdQuery</span>, <span class="extype" name="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery">CurrentPersistenceIdsQuery</span>, <span class="extype" name="akka.persistence.query.scaladsl.PersistenceIdsQuery">PersistenceIdsQuery</span>, <span class="extype" name="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery">EventsByPersistenceIdQuery</span>, <span class="extype" name="akka.persistence.query.scaladsl.EventsByTagQuery">EventsByTagQuery</span>, <span class="extype" name="akka.persistence.query.scaladsl.ReadJournal">ReadJournal</span>, <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 779.00 118.00" height="118pt" width="779pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 775,-114 775,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="akka.persistence.query.journal.redis.ScalaReadJournal (this class)" xlink:href="#inheritance-diagram"><path d="M394.167,-49C394.167,-49 292.833,-49 292.833,-49 288.667,-49 284.5,-44.8333 284.5,-40.6667 284.5,-40.6667 284.5,-32.3333 284.5,-32.3333 284.5,-28.1667 288.667,-24 292.833,-24 292.833,-24 394.167,-24 394.167,-24 398.333,-24 402.5,-28.1667 402.5,-32.3333 402.5,-32.3333 402.5,-40.6667 402.5,-40.6667 402.5,-44.8333 398.333,-49 394.167,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../../../../lib/class_diagram.png" y="-43.5" x="294.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.1" x="315.5" text-anchor="start">ScalaReadJournal</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="akka.persistence.query.scaladsl.ReadJournal"><path d="M86.6667,-110C86.6667,-110 8.33333,-110 8.33333,-110 4.16667,-110 0,-105.833 0,-101.667 0,-101.667 0,-93.3333 0,-93.3333 0,-89.1667 4.16667,-85 8.33333,-85 8.33333,-85 86.6667,-85 86.6667,-85 90.8333,-85 95,-89.1667 95,-93.3333 95,-93.3333 95,-101.667 95,-101.667 95,-105.833 90.8333,-110 86.6667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="31.5" text-anchor="start">ReadJournal</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ScalaReadJournal is a subtype of ReadJournal"><path d="M102.218,-85.2587C102.647,-85.1721 103.074,-85.0858 103.5,-85 165.123,-72.5748 235.709,-58.6404 284.299,-49.0946" stroke="#d4d4d4" fill="none"></path><polygon points="101.528,-82.8985 95.1542,-86.6897 102.501,-87.701 101.528,-82.8985" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="akka.persistence.query.scaladsl.EventsByTagQuery2"><path d="M233.667,-110C233.667,-110 121.333,-110 121.333,-110 117.167,-110 113,-105.833 113,-101.667 113,-101.667 113,-93.3333 113,-93.3333 113,-89.1667 117.167,-85 121.333,-85 121.333,-85 233.667,-85 233.667,-85 237.833,-85 242,-89.1667 242,-93.3333 242,-93.3333 242,-101.667 242,-101.667 242,-105.833 237.833,-110 233.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="123.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="144.5" text-anchor="start">EventsByTagQuery2</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="ScalaReadJournal is a subtype of EventsByTagQuery2"><path d="M216.604,-82.6017C245.309,-72.3992 283.849,-58.7012 310.898,-49.0875" stroke="#d4d4d4" fill="none"></path><polygon points="215.676,-80.3313 209.901,-84.9841 217.317,-84.9483 215.676,-80.3313" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery"><path d="M418.667,-110C418.667,-110 268.333,-110 268.333,-110 264.167,-110 260,-105.833 260,-101.667 260,-101.667 260,-93.3333 260,-93.3333 260,-89.1667 264.167,-85 268.333,-85 268.333,-85 418.667,-85 418.667,-85 422.833,-85 427,-89.1667 427,-93.3333 427,-93.3333 427,-101.667 427,-101.667 427,-105.833 422.833,-110 418.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="270.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="291.5" text-anchor="start">EventsByPersistenceIdQuery</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="ScalaReadJournal is a subtype of EventsByPersistenceIdQuery"><path d="M343.5,-77.7603C343.5,-68.3675 343.5,-57.2882 343.5,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="341.05,-77.8435 343.5,-84.8435 345.95,-77.8435 341.05,-77.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="akka.persistence.query.scaladsl.AllPersistenceIdsQuery"><path d="M579.667,-110C579.667,-110 453.333,-110 453.333,-110 449.167,-110 445,-105.833 445,-101.667 445,-101.667 445,-93.3333 445,-93.3333 445,-89.1667 449.167,-85 453.333,-85 453.333,-85 579.667,-85 579.667,-85 583.833,-85 588,-89.1667 588,-93.3333 588,-93.3333 588,-101.667 588,-101.667 588,-105.833 583.833,-110 579.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="455.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="476.5" text-anchor="start">AllPersistenceIdsQuery</text></a></g></g><!-- node4&#45;&gt;node0 --><g class="edge inheritance" id="graph1_4_0"><g id="a_inheritance|graph1_4_0"><a xlink:title="ScalaReadJournal is a subtype of AllPersistenceIdsQuery"><path d="M475.747,-82.6017C445.831,-72.3992 405.666,-58.7012 377.477,-49.0875" stroke="#d4d4d4" fill="none"></path><polygon points="475.317,-85.0434 482.733,-84.9841 476.899,-80.4057 475.317,-85.0434" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery"><path d="M762.667,-110C762.667,-110 614.333,-110 614.333,-110 610.167,-110 606,-105.833 606,-101.667 606,-101.667 606,-93.3333 606,-93.3333 606,-89.1667 610.167,-85 614.333,-85 614.333,-85 762.667,-85 762.667,-85 766.833,-85 771,-89.1667 771,-93.3333 771,-93.3333 771,-101.667 771,-101.667 771,-105.833 766.833,-110 762.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="616.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="637.5" text-anchor="start">CurrentPersistenceIdsQuery</text></a></g></g><!-- node5&#45;&gt;node0 --><g class="edge inheritance" id="graph1_5_0"><g id="a_inheritance|graph1_5_0"><a xlink:title="ScalaReadJournal is a subtype of CurrentPersistenceIdsQuery"><path d="M613.964,-83.7533C550.673,-72.9296 461.06,-57.6045 402.618,-47.61" stroke="#d4d4d4" fill="none"></path><polygon points="613.849,-86.219 621.162,-84.9841 614.675,-81.3892 613.849,-86.219" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 1154.50 118.00" height="118pt" width="1155pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 1150.5,-114 1150.5,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="akka.persistence.query.journal.redis.ScalaReadJournal (this class)" xlink:href="#inheritance-diagram"><path d="M556.167,-49C556.167,-49 454.833,-49 454.833,-49 450.667,-49 446.5,-44.8333 446.5,-40.6667 446.5,-40.6667 446.5,-32.3333 446.5,-32.3333 446.5,-28.1667 450.667,-24 454.833,-24 454.833,-24 556.167,-24 556.167,-24 560.333,-24 564.5,-28.1667 564.5,-32.3333 564.5,-32.3333 564.5,-40.6667 564.5,-40.6667 564.5,-44.8333 560.333,-49 556.167,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../../../../lib/class_diagram.png" y="-43.5" x="456.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.1" x="477.5" text-anchor="start">ScalaReadJournal</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="akka.persistence.query.scaladsl.ReadJournal"><path d="M86.6667,-110C86.6667,-110 8.33333,-110 8.33333,-110 4.16667,-110 0,-105.833 0,-101.667 0,-101.667 0,-93.3333 0,-93.3333 0,-89.1667 4.16667,-85 8.33333,-85 8.33333,-85 86.6667,-85 86.6667,-85 90.8333,-85 95,-89.1667 95,-93.3333 95,-93.3333 95,-101.667 95,-101.667 95,-105.833 90.8333,-110 86.6667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="31.5" text-anchor="start">ReadJournal</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ScalaReadJournal is a subtype of ReadJournal"><path d="M102.209,-85.2106C102.641,-85.1394 103.071,-85.0692 103.5,-85 224.739,-65.4248 367.777,-50.441 446.36,-42.9016" stroke="#d4d4d4" fill="none"></path><polygon points="101.589,-82.8312 95.1082,-86.4367 102.423,-87.6598 101.589,-82.8312" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="akka.persistence.query.scaladsl.EventsByTagQuery"><path d="M227.667,-110C227.667,-110 121.333,-110 121.333,-110 117.167,-110 113,-105.833 113,-101.667 113,-101.667 113,-93.3333 113,-93.3333 113,-89.1667 117.167,-85 121.333,-85 121.333,-85 227.667,-85 227.667,-85 231.833,-85 236,-89.1667 236,-93.3333 236,-93.3333 236,-101.667 236,-101.667 236,-105.833 231.833,-110 227.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="123.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="144.5" text-anchor="start">EventsByTagQuery</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="ScalaReadJournal is a subtype of EventsByTagQuery"><path d="M243.556,-84.1909C303.568,-73.494 389.565,-58.1652 446.437,-48.0279" stroke="#d4d4d4" fill="none"></path><polygon points="242.832,-81.8313 236.37,-85.4718 243.692,-86.6553 242.832,-81.8313" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery"><path d="M412.667,-110C412.667,-110 262.333,-110 262.333,-110 258.167,-110 254,-105.833 254,-101.667 254,-101.667 254,-93.3333 254,-93.3333 254,-89.1667 258.167,-85 262.333,-85 262.333,-85 412.667,-85 412.667,-85 416.833,-85 421,-89.1667 421,-93.3333 421,-93.3333 421,-101.667 421,-101.667 421,-105.833 416.833,-110 412.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="264.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="285.5" text-anchor="start">EventsByPersistenceIdQuery</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="ScalaReadJournal is a subtype of EventsByPersistenceIdQuery"><path d="M377.075,-82.6017C406.126,-72.3992 445.131,-58.7012 472.505,-49.0875" stroke="#d4d4d4" fill="none"></path><polygon points="376.084,-80.353 370.291,-84.9841 377.707,-84.9762 376.084,-80.353" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="akka.persistence.query.scaladsl.PersistenceIdsQuery"><path d="M563.667,-110C563.667,-110 447.333,-110 447.333,-110 443.167,-110 439,-105.833 439,-101.667 439,-101.667 439,-93.3333 439,-93.3333 439,-89.1667 443.167,-85 447.333,-85 447.333,-85 563.667,-85 563.667,-85 567.833,-85 572,-89.1667 572,-93.3333 572,-93.3333 572,-101.667 572,-101.667 572,-105.833 567.833,-110 563.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="449.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="470.5" text-anchor="start">PersistenceIdsQuery</text></a></g></g><!-- node4&#45;&gt;node0 --><g class="edge inheritance" id="graph1_4_0"><g id="a_inheritance|graph1_4_0"><a xlink:title="ScalaReadJournal is a subtype of PersistenceIdsQuery"><path d="M505.5,-77.7603C505.5,-68.3675 505.5,-57.2882 505.5,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="503.05,-77.8435 505.5,-84.8435 507.95,-77.8435 503.05,-77.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery"><path d="M746.667,-110C746.667,-110 598.333,-110 598.333,-110 594.167,-110 590,-105.833 590,-101.667 590,-101.667 590,-93.3333 590,-93.3333 590,-89.1667 594.167,-85 598.333,-85 598.333,-85 746.667,-85 746.667,-85 750.833,-85 755,-89.1667 755,-93.3333 755,-93.3333 755,-101.667 755,-101.667 755,-105.833 750.833,-110 746.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="600.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="621.5" text-anchor="start">CurrentPersistenceIdsQuery</text></a></g></g><!-- node5&#45;&gt;node0 --><g class="edge inheritance" id="graph1_5_0"><g id="a_inheritance|graph1_5_0"><a xlink:title="ScalaReadJournal is a subtype of CurrentPersistenceIdsQuery"><path d="M633.161,-82.6017C604.282,-72.3992 565.51,-58.7012 538.298,-49.0875" stroke="#d4d4d4" fill="none"></path><polygon points="632.488,-84.9623 639.904,-84.9841 634.12,-80.3422 632.488,-84.9623" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="akka.persistence.query.scaladsl.CurrentEventsByPersistenceIdQuery"><path d="M963.667,-110C963.667,-110 781.333,-110 781.333,-110 777.167,-110 773,-105.833 773,-101.667 773,-101.667 773,-93.3333 773,-93.3333 773,-89.1667 777.167,-85 781.333,-85 781.333,-85 963.667,-85 963.667,-85 967.833,-85 972,-89.1667 972,-93.3333 972,-93.3333 972,-101.667 972,-101.667 972,-105.833 967.833,-110 963.667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="783.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="804.5" text-anchor="start">CurrentEventsByPersistenceIdQuery</text></a></g></g><!-- node6&#45;&gt;node0 --><g class="edge inheritance" id="graph1_6_0"><g id="a_inheritance|graph1_6_0"><a xlink:title="ScalaReadJournal is a subtype of CurrentEventsByPersistenceIdQuery"><path d="M793.89,-83.8624C725.127,-72.8079 626.777,-56.9969 564.545,-46.9923" stroke="#d4d4d4" fill="none"></path><polygon points="793.567,-86.2919 800.867,-84.9841 794.345,-81.454 793.567,-86.2919" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="akka.persistence.query.scaladsl.CurrentEventsByTagQuery"><path d="M1138.17,-110C1138.17,-110 998.833,-110 998.833,-110 994.667,-110 990.5,-105.833 990.5,-101.667 990.5,-101.667 990.5,-93.3333 990.5,-93.3333 990.5,-89.1667 994.667,-85 998.833,-85 998.833,-85 1138.17,-85 1138.17,-85 1142.33,-85 1146.5,-89.1667 1146.5,-93.3333 1146.5,-93.3333 1146.5,-101.667 1146.5,-101.667 1146.5,-105.833 1142.33,-110 1138.17,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../../lib/trait_diagram.png" y="-104.5" x="1000.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="1021.5" text-anchor="start">CurrentEventsByTagQuery</text></a></g></g><!-- node7&#45;&gt;node0 --><g class="edge inheritance" id="graph1_7_0"><g id="a_inheritance|graph1_7_0"><a xlink:title="ScalaReadJournal is a subtype of CurrentEventsByTagQuery"><path d="M983.123,-85.189C982.58,-85.1255 982.039,-85.0625 981.5,-85 831.563,-67.6137 654.599,-50.9725 564.56,-42.7818" stroke="#d4d4d4" fill="none"></path><polygon points="983.02,-87.6439 990.26,-86.038 983.598,-82.7782 983.02,-87.6439" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -247,7 +253,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="akka.persistence.query.journal.redis.ScalaReadJournal"><span>ScalaReadJournal</span></li><li class="in" name="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery"><span>CurrentPersistenceIdsQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.AllPersistenceIdsQuery"><span>AllPersistenceIdsQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery"><span>EventsByPersistenceIdQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.EventsByTagQuery2"><span>EventsByTagQuery2</span></li><li class="in" name="akka.persistence.query.scaladsl.ReadJournal"><span>ReadJournal</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="akka.persistence.query.journal.redis.ScalaReadJournal"><span>ScalaReadJournal</span></li><li class="in" name="akka.persistence.query.scaladsl.CurrentEventsByTagQuery"><span>CurrentEventsByTagQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.CurrentEventsByPersistenceIdQuery"><span>CurrentEventsByPersistenceIdQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery"><span>CurrentPersistenceIdsQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.PersistenceIdsQuery"><span>PersistenceIdsQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery"><span>EventsByPersistenceIdQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.EventsByTagQuery"><span>EventsByTagQuery</span></li><li class="in" name="akka.persistence.query.scaladsl.ReadJournal"><span>ReadJournal</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
                   <span class="filtertype">Implicitly<br />
@@ -291,7 +297,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -307,7 +313,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -366,28 +372,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="akka.persistence.query.journal.redis.ScalaReadJournal#allPersistenceIds" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="allPersistenceIds():akka.stream.scaladsl.Source[String,akka.NotUsed]"></a><a id="allPersistenceIds():Source[String,NotUsed]"></a>
-      <span class="permalink">
-      <a href="../../../../../akka/persistence/query/journal/redis/ScalaReadJournal.html#allPersistenceIds():akka.stream.scaladsl.Source[String,akka.NotUsed]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">allPersistenceIds</span><span class="params">()</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.stream.scaladsl.Source" class="extype" target="_top">Source</a>[<span class="extype" name="scala.Predef.String">String</span>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.NotUsed" class="extype" target="_top">NotUsed</a>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Returns the live stream of persisted identifiers.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the live stream of persisted identifiers.
- Identifiers may appear several times in the stream.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → AllPersistenceIdsQuery</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -416,7 +404,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -426,6 +414,43 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="akka.persistence.query.journal.redis.ScalaReadJournal#currentEventsByPersistenceId" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="currentEventsByPersistenceId(persistenceId:String,fromSequenceNr:Long,toSequenceNr:Long):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope,akka.NotUsed]"></a><a id="currentEventsByPersistenceId(String,Long,Long):Source[EventEnvelope,NotUsed]"></a>
+      <span class="permalink">
+      <a href="../../../../../akka/persistence/query/journal/redis/ScalaReadJournal.html#currentEventsByPersistenceId(persistenceId:String,fromSequenceNr:Long,toSequenceNr:Long):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope,akka.NotUsed]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">currentEventsByPersistenceId</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fromSequenceNr">fromSequenceNr: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="toSequenceNr">toSequenceNr: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <span class="extype" name="akka.stream.scaladsl.Source">Source</span>[<span class="extype" name="akka.persistence.query.EventEnvelope">EventEnvelope</span>, <span class="extype" name="akka.NotUsed">NotUsed</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the stream of current events for the given <code>persistenceId</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the stream of current events for the given <code>persistenceId</code>.
+ Events are ordered by <code>sequenceNr</code>.
+ When the <code>toSequenceNr</code> has been delivered or no more elements are available at the current time, the stream is closed.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → CurrentEventsByPersistenceIdQuery</dd></dl></div>
+    </li><li name="akka.persistence.query.journal.redis.ScalaReadJournal#currentEventsByTag" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="currentEventsByTag(tag:String,offset:akka.persistence.query.Offset):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope,akka.NotUsed]"></a><a id="currentEventsByTag(String,Offset):Source[EventEnvelope,NotUsed]"></a>
+      <span class="permalink">
+      <a href="../../../../../akka/persistence/query/journal/redis/ScalaReadJournal.html#currentEventsByTag(tag:String,offset:akka.persistence.query.Offset):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope,akka.NotUsed]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">currentEventsByTag</span><span class="params">(<span name="tag">tag: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="offset">offset: <span class="extype" name="akka.persistence.query.Offset">Offset</span></span>)</span><span class="result">: <span class="extype" name="akka.stream.scaladsl.Source">Source</span>[<span class="extype" name="akka.persistence.query.EventEnvelope">EventEnvelope</span>, <span class="extype" name="akka.NotUsed">NotUsed</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the stream of current events with a given tag.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the stream of current events with a given tag.
+ The events are sorted in the order they occurred, you can rely on it.</p><p> Once there are no more events in the store, the stream is closed, not waiting for new ones.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → CurrentEventsByTagQuery</dd></dl></div>
     </li><li name="akka.persistence.query.journal.redis.ScalaReadJournal#currentPersistenceIds" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="currentPersistenceIds():akka.stream.scaladsl.Source[String,akka.NotUsed]"></a><a id="currentPersistenceIds():Source[String,NotUsed]"></a>
       <span class="permalink">
@@ -438,11 +463,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">currentPersistenceIds</span><span class="params">()</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.stream.scaladsl.Source" class="extype" target="_top">Source</a>[<span class="extype" name="scala.Predef.String">String</span>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.NotUsed" class="extype" target="_top">NotUsed</a>]</span>
+        <span class="name">currentPersistenceIds</span><span class="params">()</span><span class="result">: <span class="extype" name="akka.stream.scaladsl.Source">Source</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="akka.NotUsed">NotUsed</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Returns the stream of current persisted identifiers.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the stream of current persisted identifiers.
- This stream is not live, once, the identifiers were all returned, it is closed.
+ This stream is not live, once the identifiers were all returned, it is closed.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → CurrentPersistenceIdsQuery</dd></dl></div>
     </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a><a id="ensuring((ScalaReadJournal)⇒Boolean,⇒Any):ScalaReadJournal"></a>
@@ -456,7 +481,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
@@ -476,7 +501,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
@@ -496,7 +521,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
@@ -516,7 +541,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
@@ -536,7 +561,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -552,7 +577,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -568,7 +593,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eventsByPersistenceId</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fromSequenceNr">fromSequenceNr: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="toSequenceNr">toSequenceNr: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.stream.scaladsl.Source" class="extype" target="_top">Source</a>[<a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.EventEnvelope" class="extype" target="_top">EventEnvelope</a>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.NotUsed" class="extype" target="_top">NotUsed</a>]</span>
+        <span class="name">eventsByPersistenceId</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fromSequenceNr">fromSequenceNr: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="toSequenceNr">toSequenceNr: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <span class="extype" name="akka.stream.scaladsl.Source">Source</span>[<span class="extype" name="akka.persistence.query.EventEnvelope">EventEnvelope</span>, <span class="extype" name="akka.NotUsed">NotUsed</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Returns the live stream of events for the given <code>persistenceId</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the live stream of events for the given <code>persistenceId</code>.
@@ -576,9 +601,9 @@
  When the <code>toSequenceNr</code> has been delivered, the stream is closed.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → EventsByPersistenceIdQuery</dd></dl></div>
     </li><li name="akka.persistence.query.journal.redis.ScalaReadJournal#eventsByTag" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="eventsByTag(tag:String,offset:akka.persistence.query.Offset):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope2,akka.NotUsed]"></a><a id="eventsByTag(String,Offset):Source[EventEnvelope2,NotUsed]"></a>
+      <a id="eventsByTag(tag:String,offset:akka.persistence.query.Offset):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope,akka.NotUsed]"></a><a id="eventsByTag(String,Offset):Source[EventEnvelope,NotUsed]"></a>
       <span class="permalink">
-      <a href="../../../../../akka/persistence/query/journal/redis/ScalaReadJournal.html#eventsByTag(tag:String,offset:akka.persistence.query.Offset):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope2,akka.NotUsed]" title="Permalink">
+      <a href="../../../../../akka/persistence/query/journal/redis/ScalaReadJournal.html#eventsByTag(tag:String,offset:akka.persistence.query.Offset):akka.stream.scaladsl.Source[akka.persistence.query.EventEnvelope,akka.NotUsed]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -587,12 +612,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eventsByTag</span><span class="params">(<span name="tag">tag: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="offset">offset: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.Offset" class="extype" target="_top">Offset</a></span>)</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.stream.scaladsl.Source" class="extype" target="_top">Source</a>[<a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.EventEnvelope2" class="extype" target="_top">EventEnvelope2</a>, <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.NotUsed" class="extype" target="_top">NotUsed</a>]</span>
+        <span class="name">eventsByTag</span><span class="params">(<span name="tag">tag: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="offset">offset: <span class="extype" name="akka.persistence.query.Offset">Offset</span></span>)</span><span class="result">: <span class="extype" name="akka.stream.scaladsl.Source">Source</span>[<span class="extype" name="akka.persistence.query.EventEnvelope">EventEnvelope</span>, <span class="extype" name="akka.NotUsed">NotUsed</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Returns the live stream of events with a given tag.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the live stream of events with a given tag.
  The events are sorted in the order they occurred, you can rely on it.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → EventsByTagQuery2</dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → EventsByTagQuery</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
@@ -605,7 +630,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -666,7 +691,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -682,7 +707,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
@@ -698,7 +723,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -714,7 +739,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
@@ -730,10 +755,28 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="akka.persistence.query.journal.redis.ScalaReadJournal#persistenceIds" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="persistenceIds():akka.stream.scaladsl.Source[String,akka.NotUsed]"></a><a id="persistenceIds():Source[String,NotUsed]"></a>
+      <span class="permalink">
+      <a href="../../../../../akka/persistence/query/journal/redis/ScalaReadJournal.html#persistenceIds():akka.stream.scaladsl.Source[String,akka.NotUsed]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">persistenceIds</span><span class="params">()</span><span class="result">: <span class="extype" name="akka.stream.scaladsl.Source">Source</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="akka.NotUsed">NotUsed</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns the live stream of persisted identifiers.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the live stream of persisted identifiers.
+ Identifiers may appear several times in the stream.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.query.journal.redis.ScalaReadJournal">ScalaReadJournal</a> → PersistenceIdsQuery</dd></dl></div>
     </li><li name="akka.persistence.query.journal.redis.ScalaReadJournal#redis" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="redis:redis.RedisClient"></a><a id="redis:RedisClient"></a>
       <span class="permalink">
@@ -794,7 +837,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -816,7 +859,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -838,7 +881,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -878,20 +921,24 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery" class="extype" target="_top">CurrentPersistenceIdsQuery</a></h3>
-            </div><div class="parent" name="akka.persistence.query.scaladsl.AllPersistenceIdsQuery">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.AllPersistenceIdsQuery" class="extype" target="_top">AllPersistenceIdsQuery</a></h3>
+        <div class="parent" name="akka.persistence.query.scaladsl.CurrentEventsByTagQuery">
+              <h3>Inherited from <span class="extype" name="akka.persistence.query.scaladsl.CurrentEventsByTagQuery">CurrentEventsByTagQuery</span></h3>
+            </div><div class="parent" name="akka.persistence.query.scaladsl.CurrentEventsByPersistenceIdQuery">
+              <h3>Inherited from <span class="extype" name="akka.persistence.query.scaladsl.CurrentEventsByPersistenceIdQuery">CurrentEventsByPersistenceIdQuery</span></h3>
+            </div><div class="parent" name="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery">
+              <h3>Inherited from <span class="extype" name="akka.persistence.query.scaladsl.CurrentPersistenceIdsQuery">CurrentPersistenceIdsQuery</span></h3>
+            </div><div class="parent" name="akka.persistence.query.scaladsl.PersistenceIdsQuery">
+              <h3>Inherited from <span class="extype" name="akka.persistence.query.scaladsl.PersistenceIdsQuery">PersistenceIdsQuery</span></h3>
             </div><div class="parent" name="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.EventsByPersistenceIdQuery" class="extype" target="_top">EventsByPersistenceIdQuery</a></h3>
-            </div><div class="parent" name="akka.persistence.query.scaladsl.EventsByTagQuery2">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.EventsByTagQuery2" class="extype" target="_top">EventsByTagQuery2</a></h3>
+              <h3>Inherited from <span class="extype" name="akka.persistence.query.scaladsl.EventsByPersistenceIdQuery">EventsByPersistenceIdQuery</span></h3>
+            </div><div class="parent" name="akka.persistence.query.scaladsl.EventsByTagQuery">
+              <h3>Inherited from <span class="extype" name="akka.persistence.query.scaladsl.EventsByTagQuery">EventsByTagQuery</span></h3>
             </div><div class="parent" name="akka.persistence.query.scaladsl.ReadJournal">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.query.scaladsl.ReadJournal" class="extype" target="_top">ReadJournal</a></h3>
+              <h3>Inherited from <span class="extype" name="akka.persistence.query.scaladsl.ReadJournal">ReadJournal</span></h3>
             </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
             </div>
         <div class="conversion" name="scala.Predef.any2stringadd">
               <h3>Inherited by implicit conversion any2stringadd from

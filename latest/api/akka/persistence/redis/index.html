@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Akka Persistence Redis 0.1.0 - akka.persistence.redis</title>
-          <meta name="description" content="Akka Persistence Redis 0.1.0 - akka.persistence.redis" />
-          <meta name="keywords" content="Akka Persistence Redis 0.1.0 akka.persistence.redis" />
+          <title>Akka Persistence Redis 0.2.0 - akka.persistence.redis</title>
+          <meta name="description" content="Akka Persistence Redis 0.2.0 - akka.persistence.redis" />
+          <meta name="keywords" content="Akka Persistence Redis 0.2.0 akka.persistence.redis" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.1.0</span></span>
+        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.2.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -233,7 +233,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
         
 
@@ -295,7 +295,7 @@
       <span class="symbol">
         <a title="" href="SnapshotEntry.html">
               <span class="name">SnapshotEntry</span>
-            </a><span class="params">(<span name="sequenceNr">sequenceNr: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="timestamp">timestamp: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="snapshot">snapshot: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.util.ByteString" class="extype" target="_top">ByteString</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+            </a><span class="params">(<span name="sequenceNr">sequenceNr: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="timestamp">timestamp: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="snapshot">snapshot: <span class="extype" name="akka.util.ByteString">ByteString</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       
       
@@ -319,7 +319,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">persistentFromBytes</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="serialization">serialization: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.serialization.Serialization" class="extype" target="_top">Serialization</a></span>)</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.PersistentRepr" class="extype" target="_top">PersistentRepr</a></span>
+        <span class="name">persistentFromBytes</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="serialization">serialization: <span class="extype" name="akka.serialization.Serialization">Serialization</span></span>)</span><span class="result">: <span class="extype" name="akka.persistence.PersistentRepr">PersistentRepr</span></span>
       </span>
       
       
@@ -335,7 +335,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">persistentToBytes</span><span class="params">(<span name="p">p: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.persistence.PersistentRepr" class="extype" target="_top">PersistentRepr</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="serialization">serialization: <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.serialization.Serialization" class="extype" target="_top">Serialization</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>
+        <span class="name">persistentToBytes</span><span class="params">(<span name="p">p: <span class="extype" name="akka.persistence.PersistentRepr">PersistentRepr</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="serialization">serialization: <span class="extype" name="akka.serialization.Serialization">Serialization</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>
       </span>
       
       
@@ -404,9 +404,9 @@
 
         <div id="inheritedMembers">
         <div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.1/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.2/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
             </div>
         
         </div>
