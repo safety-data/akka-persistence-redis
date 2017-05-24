@@ -89,7 +89,7 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
 
   def asyncReadHighestSequenceNr(persistenceId: String, fromSequenceNr: Long): Future[Long] =
     for (highestStored <- redis.get[Long](highestSequenceNrKey(persistenceId)))
-      yield highestStored.getOrElse(0L)
+      yield highestStored.getOrElse(fromSequenceNr)
 
   def asyncReplayMessages(persistenceId: String, fromSequenceNr: Long, toSequenceNr: Long, max: Long)(recoveryCallback: PersistentRepr => Unit): Future[Unit] =
     for {
