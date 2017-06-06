@@ -19,7 +19,6 @@ package redis
 
 object RedisKeys {
   val identifiersKey = "journal:persistenceIds"
-  val tagsKey = "journal:tags"
   def highestSequenceNrKey(persistenceId: String) = f"journal:persisted:$persistenceId:highestSequenceNr"
   def journalKey(persistenceId: String) = f"journal:persisted:$persistenceId"
   def journalChannel(persistenceId: String) = f"journal:channel:persisted:$persistenceId"

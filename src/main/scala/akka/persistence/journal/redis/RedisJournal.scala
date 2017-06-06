@@ -141,7 +141,6 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
           .zip(Future.sequence(tags.map { t =>
             transaction
               .rpush(tagKey(t), f"${pr.sequenceNr}:${pr.persistenceId}")
-              .zip(transaction.sadd(tagsKey, t))
               // notify about new event being appended for this tag
               .zip(transaction.publish(tagsChannel, t))
           }))
