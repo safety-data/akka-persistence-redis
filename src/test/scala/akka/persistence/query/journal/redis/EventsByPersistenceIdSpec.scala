@@ -82,7 +82,7 @@ class EventsByPersistenceIdSpec extends AkkaSpec(EventsByPersistenceIdSpec.confi
         .expectComplete()
     }
 
-    "not see new events after completion" in {
+    "not see new events after opening" in {
       val ref = setup("f")
       val src = queries.currentEventsByPersistenceId("f", 0L, Long.MaxValue)
       val probe = src.map(_.event).runWith(TestSink.probe[Any])
@@ -90,14 +90,14 @@ class EventsByPersistenceIdSpec extends AkkaSpec(EventsByPersistenceIdSpec.confi
         .expectNext("f-1", "f-2")
         .expectNoMsg(100.millis)
 
+      ref ! "f-4"
+      expectMsg("f-4-done")
+
       probe
         .expectNoMsg(100.millis)
         .request(5)
         .expectNext("f-3")
         .expectComplete() // f-4 not seen
-
-      ref ! "f-4"
-      expectMsg("f-4-done")
 
     }
 

@@ -47,6 +47,7 @@ import scala.reflect._
 import com.typesafe.config.Config
 
 private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, persistenceId: String, from: Long, to: Long, system: ActorSystem, live: Boolean) extends GraphStage[SourceShape[EventEnvelope]] {
+  self =>
 
   val out: Outlet[EventEnvelope] =
     if (live)
@@ -67,6 +68,10 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
   val NotifiedWhenQuerying = 2
   //  - Client requested element but no new one in database, waiting for notification
   val WaitingForNotification = 3
+  // - Source is initializing
+  val Initializing = 4
+  // - Downstream requested an element during initialization
+  val QueryWhenInitializing = 5
 
   implicit object eventRefDeserializer extends ByteStringDeserializer[EventRef] {
     private val EventRe = "(\\d+):(.*)".r
@@ -81,6 +86,10 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
       Try(bs.utf8String.toLong).toOption
   }
 
+  implicit object longFormatter extends ByteStringDeserializer[Long] {
+    def deserialize(bs: ByteString): Long =
+      bs.utf8String.toLong
+  }
   val Channel = journalChannel(persistenceId)
 
   implicit val serialization = SerializationExtension(system)
@@ -94,6 +103,7 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
       private var subscription: RedisPubSub = null
       private val max = conf.getInt("max")
       private var currentSequenceNr = from
+      private var to = self.to
       private var callback: AsyncCallback[Seq[PersistentRepr]] = null
 
       implicit def ec = materializer.executionContext
@@ -101,21 +111,25 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
       override def preStart(): Unit = {
         callback = getAsyncCallback[Seq[PersistentRepr]] { events =>
           if (events.isEmpty) {
-            state match {
-              case NotifiedWhenQuerying =>
-                // maybe we missed some new event when querying, retry
-                query()
-              case Querying =>
-                if (live) {
+            if (currentSequenceNr > to) {
+              // end has been reached
+              completeStage()
+            } else {
+              state match {
+                case NotifiedWhenQuerying =>
+                  // maybe we missed some new event when querying, retry
+                  state = Idle
+                  query()
+                case Querying if live =>
                   // nothing new, wait for notification
                   state = WaitingForNotification
-                } else {
-                  // not a live stream, nothing else currently in the database, close the stream
+                case Querying =>
+                  // seems this journal is empty, complete stream
                   completeStage()
-                }
-              case _ =>
-                log.error(f"Unexpected source state: $state")
-                failStage(new IllegalStateException(f"Unexpected source state: $state"))
+                case _ =>
+                  log.error(f"Unexpected source state: $state")
+                  failStage(new IllegalStateException(f"Unexpected source state: $state"))
+              }
             }
           } else {
             val (evts, maxSequenceNr) = events.foldLeft(Seq.empty[EventEnvelope] -> currentSequenceNr) {
@@ -167,6 +181,45 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
             patterns = Nil,
             authPassword = RedisUtils.password(conf),
             onMessage = messageCallback.invoke)(system)
+        } else {
+          // start by first querying the current highest sequenceNr
+          // for the given persistent id
+          // stream will stop once this has been delivered
+          state = Initializing
+
+          val initCallback = getAsyncCallback[Long] { sn =>
+            if (to > sn) {
+              // the initially requested max sequence number is higher than the current
+              // one, restrict it to the current one
+              to = sn
+            }
+            state match {
+              case QueryWhenInitializing =>
+                // during initialization, downstream asked for an element,
+                // let’s query elements
+                state = Idle
+                query()
+              case Initializing =>
+                // no request from downstream, just go idle
+                state = Idle
+              case _ =>
+                log.error(f"Unexpected source state when initializing: $state")
+                failStage(new IllegalStateException(f"Unexpected source state when initializing: $state"))
+            }
+          }
+
+          val f = redis.get[Long](highestSequenceNrKey(persistenceId))
+
+          f.onComplete {
+            case Success(Some(sn)) =>
+              initCallback.invoke(sn)
+            case Success(None) =>
+              // not found, close
+              completeStage()
+            case Failure(t) =>
+              log.error(t, "Error while initializing current events by persistent id")
+              failStage(t)
+          }
         }
 
       }
@@ -178,9 +231,13 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
       private val StringSeq = classTag[Seq[String]]
 
       setHandler(out, new OutHandler {
-        override def onPull(): Unit = {
-          query()
-        }
+        override def onPull(): Unit =
+          state match {
+            case Initializing =>
+              state = QueryWhenInitializing
+            case _ =>
+              query()
+          }
       })
 
       private def query(): Unit =
@@ -211,7 +268,7 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
         val elem = buffer.dequeue
         push(out, elem)
         if (buffer.isEmpty && currentSequenceNr > to) {
-          // we delivered last buffered event and the upper bound was reached, complete 
+          // we delivered last buffered event and the upper bound was reached, complete
           completeStage()
         }
       }

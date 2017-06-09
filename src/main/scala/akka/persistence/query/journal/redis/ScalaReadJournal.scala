@@ -85,7 +85,13 @@ class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config
   /** Returns the stream of current events with a given tag.
    *  The events are sorted in the order they occurred, you can rely on it.
    *
-   *  Once there are no more events in the store, the stream is closed, not waiting for new ones.
+   *  Returned events are those present in the store with the given tag at the time
+   *  the stream is opened.
+   *
+   *  Events deleted during this stream life might not appear in the stream if not delivered yet.
+   *
+   *  Stream is closed once all events present at the time of opening have been delivered.
+   *
    */
   def currentEventsByTag(tag: String, offset: Offset): Source[EventEnvelope, NotUsed] = offset match {
     case NoOffset =>
