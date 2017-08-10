@@ -98,7 +98,7 @@ class EventsByTagSpec extends AkkaSpec(EventsByTagSpec.config)
         .expectComplete()
     }
 
-    "not see new events after complete" in {
+    "not see new events after opening" in {
       val c = system.actorOf(TestActor.props("c"))
 
       val greenSrc = queries.currentEventsByTag(tag = "green", offset = Sequence(0L))
@@ -108,14 +108,15 @@ class EventsByTagSpec extends AkkaSpec(EventsByTagSpec.config)
         .expectNext(EventEnvelope(Sequence(1L), "a", 3L, "a green banana"))
         .expectNoMsg(100.millis)
 
+      c ! "a green cucumber"
+      expectMsg(s"a green cucumber-done")
+
       probe
         .expectNoMsg(100.millis)
         .request(5)
         .expectNext(EventEnvelope(Sequence(2L), "b", 2L, "a green leaf"))
         .expectComplete() // green cucumber not seen
 
-      c ! "a green cucumber"
-      expectMsg(s"a green cucumber-done")
     }
 
     "find events from offset (inclusive)" in {

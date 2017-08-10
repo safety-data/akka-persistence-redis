@@ -67,6 +67,10 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
   val NotifiedWhenQuerying = 2
   //  - Client requested element but no new one in database, waiting for notification
   val WaitingForNotification = 3
+  // - Source is initializing
+  val Initializing = 4
+  // - Downstream requested an element during initialization
+  val QueryWhenInitializing = 5
 
   implicit object eventRefDeserializer extends ByteStringDeserializer[EventRef] {
     private val EventRe = "(\\d+):(.*)".r
@@ -89,6 +93,7 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
       private var subscription: RedisPubSub = null
       private val max = conf.getInt("max")
       private var currentOffset = offset
+      private var maxOffset = Long.MaxValue
       private var callback: AsyncCallback[(Int, Seq[(String, Option[PersistentRepr])])] = null
 
       implicit def ec = materializer.executionContext
@@ -97,21 +102,27 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
         callback = getAsyncCallback[(Int, Seq[(String, Option[PersistentRepr])])] {
           case (nb, events) =>
             if (events.isEmpty) {
-              state match {
-                case NotifiedWhenQuerying =>
-                  // maybe we missed some new event when querying, retry
-                  query()
-                case Querying =>
-                  if (live) {
-                    // nothing new, wait for notification
-                    state = WaitingForNotification
-                  } else {
-                    // not a live stream, nothing else currently in the database, close the stream
-                    completeStage()
-                  }
-                case _ =>
-                  log.error(f"Unexpected source state: $state")
-                  failStage(new IllegalStateException(f"Unexpected source state: $state"))
+              if (currentOffset >= maxOffset) {
+                // end has been reached
+                completeStage()
+              } else {
+                state match {
+                  case NotifiedWhenQuerying =>
+                    // maybe we missed some new event when querying, retry
+                    state = Idle
+                    query()
+                  case Querying =>
+                    if (live) {
+                      // nothing new, wait for notification
+                      state = WaitingForNotification
+                    } else {
+                      // not a live stream, nothing else currently in the database, close the stream
+                      completeStage()
+                    }
+                  case _ =>
+                    log.error(f"Unexpected source state: $state")
+                    failStage(new IllegalStateException(f"Unexpected source state: $state"))
+                }
               }
             } else {
               val evts = events.zipWithIndex.flatMap {
@@ -163,6 +174,38 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
             patterns = Nil,
             authPassword = RedisUtils.password(conf),
             onMessage = messageCallback.invoke)(system)
+        } else {
+          // start by first querying the current length of tag events
+          // for the given tag
+          // stream will stop once this has been delivered
+          state = Initializing
+
+          val initCallback = getAsyncCallback[Long] { len =>
+            maxOffset = len
+            state match {
+              case QueryWhenInitializing =>
+                // during initialization, downstream asked for an element,
+                // let’s query elements
+                state = Idle
+                query()
+              case Initializing =>
+                // no request from downstream, just go idle
+                state = Idle
+              case _ =>
+                log.error(f"Unexpected source state when initializing: $state")
+                failStage(new IllegalStateException(f"Unexpected source state when initializing: $state"))
+            }
+          }
+
+          val f = redis.llen(tagKey(tag))
+
+          f.onComplete {
+            case Success(len) =>
+              initCallback.invoke(len - 1)
+            case Failure(t) =>
+              log.error(t, "Error while initializing current events by tag")
+              failStage(t)
+          }
         }
 
       }
@@ -174,9 +217,13 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
       private val StringSeq = classTag[Seq[String]]
 
       setHandler(out, new OutHandler {
-        override def onPull(): Unit = {
-          query()
-        }
+        override def onPull(): Unit =
+          state match {
+            case Initializing =>
+              state = QueryWhenInitializing
+            case _ =>
+              query()
+          }
       })
 
       private def query(): Unit =
@@ -186,10 +233,11 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
               // so, we need to fill this buffer
               state = Querying
               val f = for {
-                refs <- redis.lrange[EventRef](tagKey(tag), currentOffset, currentOffset + max - 1)
+                // request next batch of events for this tag (potentially limiting to the max offset in the case of non live stream)
+                refs <- redis.lrange[EventRef](tagKey(tag), currentOffset, math.min(maxOffset, currentOffset + max - 1))
                 trans = redis.transaction()
                 events = Future.sequence(refs.map { case EventRef(sequenceNr, persistenceId) => trans.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(sequenceNr), Limit(sequenceNr)).map(persistenceId -> _) })
-                _ = trans.exec()
+                _ <- trans.exec()
                 events <- events
               } yield {
                 (refs.size, events.map {
@@ -211,7 +259,7 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
             }
           case _ =>
             log.error(f"Unexpected source state when querying: $state")
-            failStage(new IllegalStateException(f"Unexpected source state whe querying: $state"))
+            failStage(new IllegalStateException(f"Unexpected source state when querying: $state"))
         }
 
       private def deliver(): Unit = {
@@ -219,6 +267,10 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
         state = Idle
         val elem = buffer.dequeue
         push(out, elem)
+        if (buffer.isEmpty && currentOffset >= maxOffset) {
+          // max offset has been reached and delivered, complete
+          completeStage()
+        }
       }
 
     }
