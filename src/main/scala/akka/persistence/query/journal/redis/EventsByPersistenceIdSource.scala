@@ -181,6 +181,7 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
             patterns = Nil,
             authPassword = RedisUtils.password(conf),
             onMessage = messageCallback.invoke)(system)
+
         } else {
           // start by first querying the current highest sequenceNr
           // for the given persistent id
@@ -215,10 +216,12 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
               initCallback.invoke(sn)
             case Success(None) =>
               // not found, close
-              completeStage()
+              val cb = getAsyncCallback[Unit] { _ => completeStage() }
+              cb.invoke(())
             case Failure(t) =>
               log.error(t, "Error while initializing current events by persistent id")
-              failStage(t)
+              val cb = getAsyncCallback[Unit] { _ => failStage(t) }
+              cb.invoke(())
           }
         }
 
