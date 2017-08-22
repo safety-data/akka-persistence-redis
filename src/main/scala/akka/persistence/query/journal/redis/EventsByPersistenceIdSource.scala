@@ -246,7 +246,7 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
             if (buffer.isEmpty) {
               // so, we need to fill this buffer
               state = Querying
-              redis.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(currentSequenceNr), Limit(math.min(currentSequenceNr + max - 1, to))).onComplete {
+              redis.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(currentSequenceNr), Limit(to), Some(0l -> max)).onComplete {
                 case Success(events) =>
                   callback.invoke(events.map(persistentFromBytes(_)))
                 case Failure(t) =>
