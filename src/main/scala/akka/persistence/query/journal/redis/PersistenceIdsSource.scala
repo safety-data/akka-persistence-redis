@@ -110,7 +110,8 @@ private class PersistenceIdsSource(conf: Config, redis: RedisClient, system: Act
                 callback.invoke(cursor)
               case Failure(t) =>
                 log.error(t, "Error while querying persistence identifiers")
-                failStage(t)
+                val cb = getAsyncCallback[Unit] { _ => failStage(t) }
+                cb.invoke(())
             }
 
           } else if (buffer.isEmpty) {

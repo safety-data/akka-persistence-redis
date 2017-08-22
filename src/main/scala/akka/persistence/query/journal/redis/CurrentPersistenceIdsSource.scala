@@ -79,7 +79,8 @@ private class CurrentPersistenceIdsSource(redis: RedisClient) extends GraphStage
                 callback.invoke(cursor)
               case Failure(t) =>
                 log.error(t, "Error while querying persistence identifiers")
-                failStage(t)
+                val cb = getAsyncCallback[Unit] { _ => failStage(t) }
+                cb.invoke(())
             }
 
           } else {

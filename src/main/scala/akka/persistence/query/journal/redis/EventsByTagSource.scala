@@ -204,7 +204,8 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
               initCallback.invoke(len - 1)
             case Failure(t) =>
               log.error(t, "Error while initializing current events by tag")
-              failStage(t)
+              val cb = getAsyncCallback[Unit] { _ => failStage(t) }
+              cb.invoke(())
           }
         }
 
@@ -251,7 +252,8 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
                   callback.invoke((nb, events))
                 case Failure(t) =>
                   log.error(t, "Error while querying events by persistence identifier")
-                  failStage(t)
+                  val cb = getAsyncCallback[Unit] { _ => failStage(t) }
+                  cb.invoke(())
               }
             } else {
               // buffer is non empty, let’s deliver buffered data
