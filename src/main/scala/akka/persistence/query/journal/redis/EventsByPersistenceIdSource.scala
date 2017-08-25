@@ -175,11 +175,11 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
 
           // subscribe to the identifier change channel to be notifier about new ones
           // and invoke the enqueuing and delivering callback on each message
-          subscription = RedisPubSub(host = RedisUtils.host(conf),
-            port = RedisUtils.port(conf),
+          subscription = RedisPubSub(host = redis.host,
+            port = redis.port,
             channels = Seq(Channel),
             patterns = Nil,
-            authPassword = RedisUtils.password(conf),
+            authPassword = redis.password,
             onMessage = messageCallback.invoke)(system)
 
         } else {
