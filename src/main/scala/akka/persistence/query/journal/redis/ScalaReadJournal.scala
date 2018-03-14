@@ -34,12 +34,12 @@ import _root_.redis._
 import scala.concurrent.duration._
 
 class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config) extends ReadJournal
-    with EventsByTagQuery
-    with EventsByPersistenceIdQuery
-    with PersistenceIdsQuery
-    with CurrentPersistenceIdsQuery
-    with CurrentEventsByPersistenceIdQuery
-    with CurrentEventsByTagQuery {
+  with EventsByTagQuery
+  with EventsByPersistenceIdQuery
+  with PersistenceIdsQuery
+  with CurrentPersistenceIdsQuery
+  with CurrentEventsByPersistenceIdQuery
+  with CurrentEventsByTagQuery {
 
   val redis = RedisUtils.create(conf)(system)
 

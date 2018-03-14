@@ -32,7 +32,7 @@ object AllPersistenceIdsSpec {
 }
 
 class AllPersistenceIdsSpec extends AkkaSpec(AllPersistenceIdsSpec.config)
-    with Cleanup with ImplicitSender {
+  with Cleanup with ImplicitSender {
 
   implicit val mat = ActorMaterializer()(system)
 

@@ -24,10 +24,10 @@ import stream.javadsl._
 import javadsl._
 
 class JavaReadJournal private[redis] (scalaReadJournal: ScalaReadJournal) extends ReadJournal
-    with EventsByTagQuery
-    with EventsByPersistenceIdQuery
-    with PersistenceIdsQuery
-    with CurrentPersistenceIdsQuery {
+  with EventsByTagQuery
+  with EventsByPersistenceIdQuery
+  with PersistenceIdsQuery
+  with CurrentPersistenceIdsQuery {
 
   def persistenceIds(): Source[String, NotUsed] =
     scalaReadJournal.persistenceIds().asJava

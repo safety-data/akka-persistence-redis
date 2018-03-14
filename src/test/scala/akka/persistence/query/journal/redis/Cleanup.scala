@@ -29,7 +29,8 @@ trait Cleanup {
 
   override def beforeTermination() {
     val redis = RedisUtils.create(ConfigFactory.load.getConfig("akka-persistence-redis"))
-    Await.result(redis.eval("return redis.call('del', unpack(redis.call('keys', ARGV[1])))",
+    Await.result(redis.eval(
+      "return redis.call('del', unpack(redis.call('keys', ARGV[1])))",
       args = Seq("*")), 10.seconds)
   }
 

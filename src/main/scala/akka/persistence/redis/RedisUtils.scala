@@ -38,7 +38,8 @@ object RedisUtils {
   def create(conf: Config)(implicit system: ActorSystem): RedisClient =
     conf.getString("redis.mode") match {
       case "simple" =>
-        new RedisClient(host = host(conf),
+        new RedisClient(
+          host = host(conf),
           port = port(conf),
           db = database(conf),
           password = password(conf))
