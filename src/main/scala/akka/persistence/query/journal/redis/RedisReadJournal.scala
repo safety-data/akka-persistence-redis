@@ -25,7 +25,7 @@ import javadsl.{ ReadJournal => JReadJournal }
 import com.typesafe.config.Config
 
 class RedisReadJournalProvider(system: ExtendedActorSystem, config: Config)
-    extends ReadJournalProvider {
+  extends ReadJournalProvider {
 
   def javadslReadJournal(): JReadJournal =
     new JavaReadJournal(new ScalaReadJournal(system, config))

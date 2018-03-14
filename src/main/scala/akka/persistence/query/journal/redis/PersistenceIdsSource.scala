@@ -74,7 +74,8 @@ private class PersistenceIdsSource(conf: Config, redis: RedisClient, system: Act
 
         // subscribe to the identifier change channel to be notifier about new ones
         // and invoke the enqueuing and delivering callback on each message
-        subscription = RedisPubSub(host = redis.host,
+        subscription = RedisPubSub(
+          host = redis.host,
           port = redis.port,
           channels = Seq(identifiersChannel),
           patterns = Nil,
