@@ -1,6 +1,6 @@
 import scalariform.formatter.preferences._
 
-val akkaVersion = "2.5.11"
+val akkaVersion = "2.5.12"
 val redisScalaVersion = "1.8.3"
 
 lazy val publishSettings = Seq(
@@ -57,8 +57,8 @@ lazy val root = project.in(file("."))
     licenses += ("The Apache Software License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     homepage := Some(url("https://github.com/safety-data/akka-persistence-redis")),
     scmInfo := Some(ScmInfo(url("https://github.com/safety-data/akka-persistence-redis"), "git@github.com:safety-data/akka-persistence-redis.git")),
-    scalaVersion := "2.12.4",
-    crossScalaVersions := Seq("2.12.4", "2.11.12"),
+    scalaVersion := "2.12.5",
+    crossScalaVersions := Seq("2.12.5", "2.11.12"),
     libraryDependencies ++= dependencies,
     parallelExecution in Test := false,
     scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits", "-implicits-show-all", "-diagrams", "-doc-title", "Akka Persistence Redis", "-doc-version", version.value, "-doc-footer", "Copyright © 2017 Safety Data"),
