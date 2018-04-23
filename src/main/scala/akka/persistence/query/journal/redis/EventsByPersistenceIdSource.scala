@@ -255,7 +255,7 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
                   callback.invoke(events.map(persistentFromBytes(_)))
                 case Failure(t) =>
                   log.error(t, "Error while querying events by persistence identifier")
-                  failStage(t)
+                  val cb = getAsyncCallback[Throwable](t => failStage(t))
               }
             } else {
               // buffer is non empty, let’s deliver buffered data
