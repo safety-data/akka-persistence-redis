@@ -1,7 +1,7 @@
 import scalariform.formatter.preferences._
 
 val akkaVersion = "2.5.11"
-val redisScalaVersion = "1.8.0"
+val redisScalaVersion = "1.8.3"
 
 lazy val publishSettings = Seq(
   publishMavenStyle := true,
@@ -39,7 +39,7 @@ lazy val siteSettings = Seq(
 lazy val dependencies = Seq(
   "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
   "com.typesafe.akka" %% "akka-persistence-query" % akkaVersion,
-  "com.github.etaty" %% "rediscala" % redisScalaVersion,
+  "com.github.Ma27" %% "rediscala" % redisScalaVersion,
   "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % "test",
   "com.typesafe.akka" %% "akka-persistence-tck" % akkaVersion % "test",
   "com.github.pocketberserker" %% "scodec-msgpack" % "0.6.0" % "test")
