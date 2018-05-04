@@ -18,40 +18,60 @@ package persistence
 package redis
 
 import actor._
-
 import _root_.redis._
-
+import akka.persistence.utils.HostAndPort
 import com.typesafe.config.Config
 
 import scala.collection.JavaConverters._
 
 object RedisUtils {
 
-  def host(conf: Config) = conf.getString("redis.host")
+  def host(conf: Config): String = conf.getString("redis.host")
 
-  def port(conf: Config) = conf.getInt("redis.port")
+  def port(conf: Config): Int = conf.getInt("redis.port")
 
-  def database(conf: Config) = if (conf.hasPath("redis.database")) Some(conf.getInt("redis.database")) else None
+  def database(conf: Config): Option[Int] =
+    if (conf.hasPath("redis.database"))
+      Some(conf.getInt("redis.database"))
+    else
+      None
 
-  def password(conf: Config) = if (conf.hasPath("redis.password")) Some(conf.getString("redis.password")) else None
+  def password(conf: Config): Option[String] =
+    if (conf.hasPath("redis.password"))
+      Some(conf.getString("redis.password"))
+    else
+      None
+
+  def sentinels(conf: Config): Seq[(String, Int)] =
+    if (conf.hasPath("redis.sentinels")) {
+      conf
+        .getConfigList("redis.sentinels")
+        .asScala
+        .map(c => (c.getString("host"), c.getInt("port")))
+    } else {
+      conf
+        .getString("redis.sentinel-list")
+        .split(",")
+        .map(HostAndPort(_))
+        .map(_.asTuple)
+        .toSeq
+    }
 
   def create(conf: Config)(implicit system: ActorSystem): RedisClient =
     conf.getString("redis.mode") match {
       case "simple" =>
-        new RedisClient(
+        RedisClient(
           host = host(conf),
           port = port(conf),
           db = database(conf),
           password = password(conf))
 
       case "sentinel" =>
-        val sentinels =
-          conf
-            .getConfigList("redis.sentinels")
-            .asScala
-            .map(c => (c.getString("host"), c.getInt("port")))
-            .toSeq
-        new SentinelMonitoredRedisClient(sentinels = sentinels, master = conf.getString("redis.master"), db = database(conf), password = password(conf)).redisClient
+        SentinelMonitoredRedisClient(
+          sentinels = sentinels(conf),
+          master = conf.getString("redis.master"),
+          db = database(conf),
+          password = password(conf)).redisClient
 
       case mode =>
         throw new Exception(f"Unsupported redis mode $mode")
