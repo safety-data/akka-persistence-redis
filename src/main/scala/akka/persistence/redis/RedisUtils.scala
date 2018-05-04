@@ -54,7 +54,8 @@ object RedisUtils {
               .getConfigList("redis.sentinels")
               .asScala
               .map(c => (c.getString("host"), c.getInt("port")))
-          } else {conf
+          } else {
+            conf
               .getString("redis.sentinel-list")
               .split(",")
               .map(HostAndPort.apply)
