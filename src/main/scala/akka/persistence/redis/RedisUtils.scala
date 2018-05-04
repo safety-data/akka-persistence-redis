@@ -31,31 +31,30 @@ object RedisUtils {
   def port(conf: Config): Int = conf.getInt("redis.port")
 
   def database(conf: Config): Option[Int] =
-    if (conf.hasPath("redis.database")) Some(conf.getInt("redis.database"))
-    else None
+    if (conf.hasPath("redis.database"))
+      Some(conf.getInt("redis.database"))
+    else
+      None
 
   def password(conf: Config): Option[String] =
-    if (conf.hasPath("redis.password")) Some(conf.getString("redis.password"))
-    else None
+    if (conf.hasPath("redis.password"))
+      Some(conf.getString("redis.password"))
+    else
+      None
 
-  def sentinels(conf: Config): Option[Seq[(String, Int)]] =
-    conf.getString("redis.mode") match {
-      case "sentinel" =>
-        val sentinels = if (conf.hasPath("redis.sentinels")) {
-          conf
-            .getConfigList("redis.sentinels")
-            .asScala
-            .map(c => (c.getString("host"), c.getInt("port")))
-        } else {
-          conf
-            .getString("redis.sentinel-list")
-            .split(",")
-            .map(HostAndPort.apply)
-            .map(_.asTuple)
-            .toSeq
-        }
-        Some(sentinels)
-      case _ => None
+  def sentinels(conf: Config): Seq[(String, Int)] =
+    if (conf.hasPath("redis.sentinels")) {
+      conf
+        .getConfigList("redis.sentinels")
+        .asScala
+        .map(c => (c.getString("host"), c.getInt("port")))
+    } else {
+      conf
+        .getString("redis.sentinel-list")
+        .split(",")
+        .map(HostAndPort(_))
+        .map(_.asTuple)
+        .toSeq
     }
 
   def create(conf: Config)(implicit system: ActorSystem): RedisClient =
@@ -69,7 +68,7 @@ object RedisUtils {
 
       case "sentinel" =>
         SentinelMonitoredRedisClient(
-          sentinels = sentinels(conf).get,
+          sentinels = sentinels(conf),
           master = conf.getString("redis.master"),
           db = database(conf),
           password = password(conf)).redisClient
