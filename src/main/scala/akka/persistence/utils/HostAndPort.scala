@@ -19,12 +19,6 @@ package akka.persistence.utils
  */
 case class HostAndPort private (host: String, portOpt: Option[Int]) {
 
-  // construction assertion
-  portOpt match {
-    case Some(p) => require(isValidPort(p))
-    case _       =>
-  }
-
   /** Get the port value or if not set the defaultPort value
    *  @param defaultPort the default to return if port is not set
    *  @return the port or the default
