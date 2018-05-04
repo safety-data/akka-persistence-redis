@@ -24,7 +24,7 @@ class RedisUtilsSpec extends FlatSpec with Matchers {
          |   ]
          |}""".stripMargin)
     val sentinels = RedisUtils.sentinels(config)
-    assert(sentinels.contains(List(("host3", 1236), ("host4", 1237))))
+    sentinels should be(Some(List(("host3", 1236), ("host4", 1237))))
   }
 
   it should "use redis.sentinel-list if redis.sentinels is not present" in {
@@ -36,7 +36,7 @@ class RedisUtilsSpec extends FlatSpec with Matchers {
       |  sentinel-list = "host1:1234,host2:1235"
       |}""".stripMargin)
     val sentinels = RedisUtils.sentinels(config)
-    assert(sentinels.contains(List(("host1", 1234), ("host2", 1235))))
+    sentinels should be(Some(List(("host1", 1234), ("host2", 1235))))
   }
 
 }
