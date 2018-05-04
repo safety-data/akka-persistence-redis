@@ -20,17 +20,4 @@ class HostAndPortSpec extends FlatSpec with Matchers {
     assert(hostAndPort.portOrDefault(9090) == 8080)
   }
 
-  it should "throw an IllegalArgumentException if the port is negative" in {
-    a[IllegalArgumentException] should be thrownBy {
-      HostAndPort("localhost:-1")
-    }
-
-  }
-
-  it should "throw an IllegalArgumentException if the port is too high" in {
-    a[IllegalArgumentException] should be thrownBy {
-      HostAndPort("localhost:65536")
-    }
-  }
-
 }
