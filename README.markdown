@@ -33,7 +33,7 @@ The plugin is compiled with Scala 2.12 and 2.11 and are deployed on maven sonaty
 To use the plugin add this to your sbt build file :
 
 ```scala
-libraryDependencies += "com.safety-data" %% "akka-persistence-redis" % "0.3.0"
+libraryDependencies += "com.safety-data" %% "akka-persistence-redis" % "0.4.0"
 ```
 
 _Note_: for snapshot versions you will need to add the sonatype snapshot resolver.
@@ -81,7 +81,7 @@ For more details on the available capabilities of the journal query, please refe
 
 ## Database Configuration
 
-This plugin uses [rediscala](https://github.com/etaty/rediscala) to connect to redis databases and is configured using [Typesafe config](https://github.com/typesafehub/config/) library.
+This plugin uses [rediscala](https://github.com/Ma27/rediscala) to connect to redis databases and is configured using [Typesafe config](https://github.com/typesafehub/config/) library.
 
 Akka persistence redis plugin supports following modes for connecting to Redis:
  - simple
