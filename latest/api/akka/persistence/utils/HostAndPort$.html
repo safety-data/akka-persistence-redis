@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Akka Persistence Redis 0.4.0 - akka.persistence.redis.RedisKeys</title>
-          <meta name="description" content="Akka Persistence Redis 0.4.0 - akka.persistence.redis.RedisKeys" />
-          <meta name="keywords" content="Akka Persistence Redis 0.4.0 akka.persistence.redis.RedisKeys" />
+          <title>Akka Persistence Redis 0.4.0 - akka.persistence.utils.HostAndPort</title>
+          <meta name="description" content="Akka Persistence Redis 0.4.0 - akka.persistence.utils.HostAndPort" />
+          <meta name="keywords" content="Akka Persistence Redis 0.4.0 akka.persistence.utils.HostAndPort" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -101,10 +101,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="akka">akka</a></dd></dl></div>
-    </li><li name="akka.persistence.redis" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="redis"></a><a id="redis:redis"></a>
+    </li><li name="akka.persistence.utils" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="utils"></a><a id="utils:utils"></a>
       <span class="permalink">
-      <a href="../../akka/persistence/index.html#redis" title="Permalink">
+      <a href="../../akka/persistence/index.html#utils" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -113,26 +113,14 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="index.html"><span class="name">redis</span></a>
+        <a title="" href="index.html"><span class="name">utils</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="akka.persistence">persistence</a></dd></dl></div>
     </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">RedisKeys</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="object" href="RedisUtils$.html" title=""></a>
-                        <a href="RedisUtils$.html" title="">RedisUtils</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="class" href="SnapshotEntry.html" title=""></a>
-                        <a href="SnapshotEntry.html" title="">SnapshotEntry</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="object" href="package$$SnapshotEntrySerializer$.html" title=""></a>
-                        <a href="package$$SnapshotEntrySerializer$.html" title="">SnapshotEntrySerializer</a>
+                        <a class="object" href="" title="Companion Object to create HostAndPort instances either from string or from host, port"></a>
+                        <a class="class" href="HostAndPort.html" title="Convenience class for holding host and port tuples and not having to depend on Guava."></a>
+                        <a href="HostAndPort.html" title="Convenience class for holding host and port tuples and not having to depend on Guava.">HostAndPort</a>
                       </li>
               </ul>
             </div>
@@ -140,14 +128,16 @@
           <div id="content">
             <body class="object value">
       <div id="definition">
-        <div class="big-circle object">o</div>
-        <p id="owner"><a href="../../index.html" class="extype" name="akka">akka</a>.<a href="../index.html" class="extype" name="akka.persistence">persistence</a>.<a href="index.html" class="extype" name="akka.persistence.redis">redis</a></p>
-        <h1>RedisKeys<span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html" title="Permalink">
+        <a href="HostAndPort.html" title="See companion class"><div class="big-circle object-companion-class">o</div></a>
+        <p id="owner"><a href="../../index.html" class="extype" name="akka">akka</a>.<a href="../index.html" class="extype" name="akka.persistence">persistence</a>.<a href="index.html" class="extype" name="akka.persistence.utils">utils</a></p>
+        <h1><a href="HostAndPort.html" title="See companion class">HostAndPort</a><span class="permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="HostAndPort.html" title="See companion class">class HostAndPort</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
@@ -156,16 +146,17 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">RedisKeys</span>
+        <span class="name">HostAndPort</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.6/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Companion Object to create HostAndPort instances either from string or from host, port
+</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.6/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div></div>
         
 
@@ -191,7 +182,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="akka.persistence.redis.RedisKeys"><span>RedisKeys</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="akka.persistence.utils.HostAndPort"><span>HostAndPort</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -221,7 +212,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -237,7 +228,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html###():Int" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -253,7 +244,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -266,10 +257,28 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="akka.persistence.utils.HostAndPort#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(hostPortString:String):akka.persistence.utils.HostAndPort"></a><a id="apply(String):HostAndPort"></a>
+      <span class="permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#apply(hostPortString:String):akka.persistence.utils.HostAndPort" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="hostPortString">hostPortString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="HostAndPort.html" class="extype" name="akka.persistence.utils.HostAndPort">HostAndPort</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Create hostAndPort from a String like &lt;host&gt;:&lt;port&gt; or &lt;host&gt;
+</p><div class="fullcomment"><div class="comment cmt"><p>Create hostAndPort from a String like &lt;host&gt;:&lt;port&gt; or &lt;host&gt;
+</p></div><dl class="paramcmts block"><dt class="param">hostPortString</dt><dd class="cmt"><p>like &lt;host&gt;:&lt;port&gt; or &lt;host&gt;</p></dd><dt>returns</dt><dd class="cmt"><p>the HostAndPort</p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -285,7 +294,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#clone():Object" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -309,7 +318,7 @@
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -325,7 +334,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -341,7 +350,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#finalize():Unit" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -363,7 +372,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -382,7 +391,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#hashCode():Int" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -398,58 +407,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="akka.persistence.redis.RedisKeys#highestSequenceNrKey" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="highestSequenceNrKey(persistenceId:String):String"></a><a id="highestSequenceNrKey(String):String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#highestSequenceNrKey(persistenceId:String):String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">highestSequenceNrKey</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
-    </li><li name="akka.persistence.redis.RedisKeys#identifiersChannel" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="identifiersChannel:String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#identifiersChannel:String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">identifiersChannel</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      
-      
-    </li><li name="akka.persistence.redis.RedisKeys#identifiersKey" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="identifiersKey:String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#identifiersKey:String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">identifiersKey</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      
-      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -462,42 +423,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="akka.persistence.redis.RedisKeys#journalChannel" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="journalChannel(persistenceId:String):String"></a><a id="journalChannel(String):String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#journalChannel(persistenceId:String):String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">journalChannel</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
-    </li><li name="akka.persistence.redis.RedisKeys#journalKey" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="journalKey(persistenceId:String):String"></a><a id="journalKey(String):String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#journalKey(persistenceId:String):String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">journalKey</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -510,10 +439,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="akka.persistence.utils.HostAndPort#noPortFallback" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="noPortFallback:Int"></a>
+      <span class="permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#noPortFallback:Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">noPortFallback</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#notify():Unit" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -532,7 +477,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -548,26 +493,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="akka.persistence.redis.RedisKeys#snapshotKey" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="snapshotKey(persistenceId:String):String"></a><a id="snapshotKey(String):String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#snapshotKey(persistenceId:String):String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">snapshotKey</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -580,42 +509,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="akka.persistence.redis.RedisKeys#tagKey" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="tagKey(tag:String):String"></a><a id="tagKey(String):String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#tagKey(tag:String):String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">tagKey</span><span class="params">(<span name="tag">tag: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
-    </li><li name="akka.persistence.redis.RedisKeys#tagsChannel" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="tagsChannel:String"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#tagsChannel:String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">tagsChannel</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#toString():String" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -631,7 +528,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#wait():Unit" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -653,7 +550,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -675,7 +572,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../akka/persistence/redis/RedisKeys$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../akka/persistence/utils/HostAndPort$.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -706,7 +603,11 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.6/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></h3>

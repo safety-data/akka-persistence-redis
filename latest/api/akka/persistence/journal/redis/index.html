@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Akka Persistence Redis 0.2.0 - akka.persistence.journal.redis</title>
-          <meta name="description" content="Akka Persistence Redis 0.2.0 - akka.persistence.journal.redis" />
-          <meta name="keywords" content="Akka Persistence Redis 0.2.0 akka.persistence.journal.redis" />
+          <title>Akka Persistence Redis 0.4.0 - akka.persistence.journal.redis</title>
+          <meta name="description" content="Akka Persistence Redis 0.4.0 - akka.persistence.journal.redis" />
+          <meta name="keywords" content="Akka Persistence Redis 0.4.0 akka.persistence.journal.redis" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.2.0</span></span>
+        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.4.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -65,9 +65,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../../index.html">
-              <span class="name">root</span>
-            </a>
+        <a title="" href="../../../../index.html"><span class="name">root</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -83,9 +81,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../index.html">
-              <span class="name">akka</span>
-            </a>
+        <a title="" href="../../../index.html"><span class="name">akka</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -101,9 +97,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../index.html">
-              <span class="name">persistence</span>
-            </a>
+        <a title="" href="../../index.html"><span class="name">persistence</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="akka">akka</a></dd></dl></div>
@@ -119,9 +113,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html">
-              <span class="name">journal</span>
-            </a>
+        <a title="" href="../index.html"><span class="name">journal</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="akka.persistence">persistence</a></dd></dl></div>
@@ -144,9 +136,7 @@
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="class" href="RedisJournal.html" title="Stores events inside a redis database."></a>
-                        <a href="RedisJournal.html" title="Stores events inside a redis database.">
-                          RedisJournal
-                        </a>
+                        <a href="RedisJournal.html" title="Stores events inside a redis database.">RedisJournal</a>
                       </li>
               </ul>
             </div>
@@ -198,9 +188,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Stores events inside a redis database." href="RedisJournal.html">
-              <span class="name">RedisJournal</span>
-            </a><span class="result"> extends <span class="extype" name="akka.persistence.journal.AsyncWriteJournal">AsyncWriteJournal</span></span>
+        <a title="Stores events inside a redis database." href="RedisJournal.html"><span class="name">RedisJournal</span></a><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/journal/AsyncWriteJournal.html#akka.persistence.journal.AsyncWriteJournal" class="extype" name="akka.persistence.journal.AsyncWriteJournal">AsyncWriteJournal</a></span>
       </span>
       
       <p class="shortcomment cmt">Stores events inside a redis database.</p><div class="fullcomment"><div class="comment cmt"><p>Stores events inside a redis database.</p><p> For each persistence id <code>persistenceId</code>, it creates two keys:</p><ul><li><code>journal:persisted:persistenceId</code> contains a sorted set of events (sorted by sequence number)</li><li><code>journal:persisted:persistenceId:highestSequenceNr</code> contains the highest sequence number</li></ul><p> For each tag <code>t</code>, it creates a key <code>journal:tag:t</code> which contains the ordered list of pair (sequenceNr, persistenceId).
