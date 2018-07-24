@@ -1,0 +1,232 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>redis - Akka Persistence Redis 0.5.0-SNAPSHOT - akka.persistence.redis</title>
+          <meta name="description" content="redis - Akka Persistence Redis 0.5.0 - SNAPSHOT - akka.persistence.redis" />
+          <meta name="keywords" content="redis Akka Persistence Redis 0.5.0 SNAPSHOT akka.persistence.redis" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'akka.persistence.redis.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="akka">akka</a>.<a href="../package.html" class="extype" name="akka.persistence">persistence</a></p>
+        <h1>redis</h1><span class="permalink">
+      <a href="../../../index.html#akka.persistence.redis.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">redis</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="akka.persistence.redis"><span>redis</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="akka.persistence.redis.SnapshotEntry" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotEntryextendsProductwithSerializable"></a>
+      <a id="SnapshotEntry:SnapshotEntry"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotEntry.html"><span class="name">SnapshotEntry</span></a><span class="params">(<span name="sequenceNr">sequenceNr: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="timestamp">timestamp: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="snapshot">snapshot: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.util.ByteString" class="extype" target="_top">ByteString</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#akka.persistence.redis.package@SnapshotEntryextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="akka.persistence.redis.RedisKeys" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RedisKeys"></a>
+      <a id="RedisKeys:RedisKeys"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RedisKeys$.html"><span class="name">RedisKeys</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#akka.persistence.redis.package@RedisKeys" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="akka.persistence.redis.RedisUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RedisUtils"></a>
+      <a id="RedisUtils:RedisUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RedisUtils$.html"><span class="name">RedisUtils</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#akka.persistence.redis.package@RedisUtils" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="akka.persistence.redis.SnapshotEntrySerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotEntrySerializer"></a>
+      <a id="SnapshotEntrySerializer:SnapshotEntrySerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$SnapshotEntrySerializer$.html"><span class="name">SnapshotEntrySerializer</span></a><span class="result"> extends <a href="http://etaty.github.io/rediscala/index.html#redis.ByteStringFormatter" class="extype" target="_top">ByteStringFormatter</a>[<a href="SnapshotEntry.html" class="extype" name="akka.persistence.redis.SnapshotEntry">SnapshotEntry</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#akka.persistence.redis.package@SnapshotEntrySerializer" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="akka.persistence.redis#persistentFromBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="persistentFromBytes(a:Array[Byte])(implicitserialization:akka.serialization.Serialization):akka.persistence.PersistentRepr"></a>
+      <a id="persistentFromBytes(Array[Byte])(Serialization):PersistentRepr"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">persistentFromBytes</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="serialization">serialization: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.serialization.Serialization" class="extype" target="_top">Serialization</a></span>)</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.PersistentRepr" class="extype" target="_top">PersistentRepr</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#akka.persistence.redis.package@persistentFromBytes(a:Array[Byte])(implicitserialization:akka.serialization.Serialization):akka.persistence.PersistentRepr" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="akka.persistence.redis#persistentToBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="persistentToBytes(p:akka.persistence.PersistentRepr)(implicitserialization:akka.serialization.Serialization):Array[Byte]"></a>
+      <a id="persistentToBytes(PersistentRepr)(Serialization):Array[Byte]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">persistentToBytes</span><span class="params">(<span name="p">p: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.PersistentRepr" class="extype" target="_top">PersistentRepr</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="serialization">serialization: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.serialization.Serialization" class="extype" target="_top">Serialization</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#akka.persistence.redis.package@persistentToBytes(p:akka.persistence.PersistentRepr)(implicitserialization:akka.serialization.Serialization):Array[Byte]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer"> Copyright © 2017 Safety Data </div>
+
+
+    </body>
+      </html>

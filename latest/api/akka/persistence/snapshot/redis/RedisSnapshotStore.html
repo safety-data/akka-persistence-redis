@@ -1,157 +1,42 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Akka Persistence Redis 0.4.0 - akka.persistence.snapshot.redis.RedisSnapshotStore</title>
-          <meta name="description" content="Akka Persistence Redis 0.4.0 - akka.persistence.snapshot.redis.RedisSnapshotStore" />
-          <meta name="keywords" content="Akka Persistence Redis 0.4.0 akka.persistence.snapshot.redis.RedisSnapshotStore" />
+          <title>RedisSnapshotStore - Akka Persistence Redis 0.5.0-SNAPSHOT - akka.persistence.snapshot.redis.RedisSnapshotStore</title>
+          <meta name="description" content="RedisSnapshotStore - Akka Persistence Redis 0.5.0 - SNAPSHOT - akka.persistence.snapshot.redis.RedisSnapshotStore" />
+          <meta name="keywords" content="RedisSnapshotStore Akka Persistence Redis 0.5.0 SNAPSHOT akka.persistence.snapshot.redis.RedisSnapshotStore" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery.panzoom.min.js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery.mousewheel.min.js"></script>
-      <script type="text/javascript" src="../../../../lib/index.js"></script>
-      <script type="text/javascript" src="../../../../index.js"></script>
-      <script type="text/javascript" src="../../../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
       <script type="text/javascript" src="../../../../lib/template.js"></script>
       <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
       <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
-        /* this variable can be used by the JS to determine the path to the root document */
-        var toRoot = '../../../../';
-      </script>
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'akka.persistence.snapshot.redis.RedisSnapshotStore';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body>
-      <div id="search">
-        <span id="doc-title">Akka Persistence Redis<span id="doc-version">0.4.0</span></span>
-        <span class="close-results"><span class="left">&lt;</span> Back</span>
-        <div id="textfilter">
-          <span class="input">
-            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
-            <i class="clear material-icons"></i>
-            <i id="search-icon" class="material-icons"></i>
-          </span>
-        </div>
-    </div>
-      <div id="search-results">
-        <div id="search-progress">
-          <div id="progress-fill"></div>
-        </div>
-        <div id="results-content">
-          <div id="entity-results"></div>
-          <div id="member-results"></div>
-        </div>
-      </div>
-      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
-        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
-          <div id="subpackage-spacer">
-            <div id="packages">
-              <h1>Packages</h1>
-              <ul>
-                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="_root_"></a><a id="root:_root_"></a>
-      <span class="permalink">
-      <a href="index.html#_root_" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="../../../../index.html"><span class="name">root</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
-    </li><li name="_root_.akka" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="akka"></a><a id="akka:akka"></a>
-      <span class="permalink">
-      <a href="index.html#akka" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="../../../index.html"><span class="name">akka</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
-    </li><li name="akka.persistence" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="persistence"></a><a id="persistence:persistence"></a>
-      <span class="permalink">
-      <a href="../akka/index.html#persistence" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="../../index.html"><span class="name">persistence</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="akka">akka</a></dd></dl></div>
-    </li><li name="akka.persistence.snapshot" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="snapshot"></a><a id="snapshot:snapshot"></a>
-      <span class="permalink">
-      <a href="../../akka/persistence/index.html#snapshot" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="../index.html"><span class="name">snapshot</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="akka.persistence">persistence</a></dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="redis"></a><a id="redis:redis"></a>
-      <span class="permalink">
-      <a href="../../../akka/persistence/snapshot/index.html#redis" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="index.html"><span class="name">redis</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="akka.persistence.snapshot">snapshot</a></dd></dl></div>
-    </li><li class="current-entities indented4">
-                        <span class="separator"></span>
-                        <a class="class" href="" title="Stores snapshots inside a redis database."></a>
-                        <a href="" title="Stores snapshots inside a redis database.">RedisSnapshotStore</a>
-                      </li>
-              </ul>
-            </div>
-          </div>
-          <div id="content">
-            <body class="class type">
+        <body class="type">
       <div id="definition">
-        <div class="big-circle class">c</div>
-        <p id="owner"><a href="../../../index.html" class="extype" name="akka">akka</a>.<a href="../../index.html" class="extype" name="akka.persistence">persistence</a>.<a href="../index.html" class="extype" name="akka.persistence.snapshot">snapshot</a>.<a href="index.html" class="extype" name="akka.persistence.snapshot.redis">redis</a></p>
-        <h1>RedisSnapshotStore<span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html" title="Permalink">
-        <i class="material-icons"></i>
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="akka">akka</a>.<a href="../../package.html" class="extype" name="akka.persistence">persistence</a>.<a href="../package.html" class="extype" name="akka.persistence.snapshot">snapshot</a>.<a href="package.html" class="extype" name="akka.persistence.snapshot.redis">redis</a></p>
+        <h1>RedisSnapshotStore</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="akka.persistence.snapshot.redis">package redis</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
-    </span></h1>
-        <h3><span class="morelinks"></span></h3>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -160,86 +45,64 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">RedisSnapshotStore</span><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/snapshot/SnapshotStore.html#akka.persistence.snapshot.SnapshotStore" class="extype" name="akka.persistence.snapshot.SnapshotStore">SnapshotStore</a></span>
+        <span class="name">RedisSnapshotStore</span><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.snapshot.SnapshotStore" class="extype" target="_top">SnapshotStore</a></span>
       </span>
       </h4>
-
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Stores snapshots inside a redis database.</p><p> For each persistence identifier <code>persistenceId</code>, it creates one key, namely:
  <code>snapshot:persistenceId</code> that contains the ordered set of snapshot data. The data order
  is the one of <code>sequenceId</code>.
 </p></div><div class="toggleContainer block">
-          <span class="toggle">
-            Linear Supertypes
-          </span>
-          <div class="superTypes hiddenContent"><a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/snapshot/SnapshotStore.html#akka.persistence.snapshot.SnapshotStore" class="extype" name="akka.persistence.snapshot.SnapshotStore">SnapshotStore</a>, <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/ActorLogging.html#akka.actor.ActorLogging" class="extype" name="akka.actor.ActorLogging">ActorLogging</a>, <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/Actor.html#akka.actor.Actor" class="extype" name="akka.actor.Actor">Actor</a>, <a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.snapshot.SnapshotStore" class="extype" target="_top">SnapshotStore</a>, <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.ActorLogging" class="extype" target="_top">ActorLogging</a>, <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.Actor" class="extype" target="_top">Actor</a>, <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
-                <span class="toggle diagram-link">
-                  Type Hierarchy
-                </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 186.00 118.00" height="118pt" width="186pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 182,-114 182,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="akka.persistence.snapshot.redis.RedisSnapshotStore (this class)" xlink:href="#inheritance-diagram"><path d="M145.1667,-49C145.1667,-49 32.8333,-49 32.8333,-49 28.6667,-49 24.5,-44.8333 24.5,-40.6667 24.5,-40.6667 24.5,-32.3333 24.5,-32.3333 24.5,-28.1667 28.6667,-24 32.8333,-24 32.8333,-24 145.1667,-24 145.1667,-24 149.3333,-24 153.5,-28.1667 153.5,-32.3333 153.5,-32.3333 153.5,-40.6667 153.5,-40.6667 153.5,-44.8333 149.3333,-49 145.1667,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../../../lib/class_diagram.png" y="-43.5" x="35" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.1" x="56" text-anchor="start">RedisSnapshotStore</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="akka.persistence.snapshot.SnapshotStore"><path d="M133.6667,-110C133.6667,-110 44.3333,-110 44.3333,-110 40.1667,-110 36,-105.8333 36,-101.6667 36,-101.6667 36,-93.3333 36,-93.3333 36,-89.1667 40.1667,-85 44.3333,-85 44.3333,-85 133.6667,-85 133.6667,-85 137.8333,-85 142,-89.1667 142,-93.3333 142,-93.3333 142,-101.6667 142,-101.6667 142,-105.8333 137.8333,-110 133.6667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../../lib/trait_diagram.png" y="-104.5" x="46" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="67" text-anchor="start">SnapshotStore</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="RedisSnapshotStore is a subtype of SnapshotStore"><path d="M89,-77.7386C89,-68.3393 89,-57.3803 89,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="86.5501,-77.8607 89,-84.8608 91.4501,-77.8608 86.5501,-77.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
-                <div id="diagram-controls" class="hiddenContent">
-                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
-                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
-                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
-                </div>
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 190.00 118.00" height="118pt" width="190pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 186,-114 186,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="akka.persistence.snapshot.redis.RedisSnapshotStore (this class)" xlink:href="#inheritance-diagram"><polygon points="158,-49 24,-49 24,-24 158,-24 158,-49" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="55" text-anchor="start">RedisSnapshotStore</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="akka.persistence.snapshot.SnapshotStore"><polygon points="145.5,-110 36.5,-110 36.5,-85 145.5,-85 145.5,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-104.5" x="47" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="68" text-anchor="start">SnapshotStore</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="RedisSnapshotStore is a subtype of SnapshotStore"><path d="M91,-79.669C91,-69.8714 91,-57.9526 91,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="89.2501,-79.8607 91,-84.8608 92.7501,-79.8608 89.2501,-79.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
               </div></div>
         
 
       <div id="mbrsel">
-        <div class="toggle"></div>
-        <div id="memberfilter">
-          <i class="material-icons arrow"></i>
-          <span class="input">
-            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
-          </span>
-          <i class="clear material-icons"></i>
-        </div>
-        <div id="filterby">
-          <div id="order">
-            <span class="filtertype">Ordering</span>
-            <ol>
-              
-              <li class="alpha in"><span>Alphabetic</span></li>
-              <li class="inherit out"><span>By Inheritance</span></li>
-            </ol>
-          </div>
-          <div class="ancestors">
-                  <span class="filtertype">Inherited<br />
-                  </span>
-                  <ol id="linearization">
-                    <li class="in" name="akka.persistence.snapshot.redis.RedisSnapshotStore"><span>RedisSnapshotStore</span></li><li class="in" name="akka.persistence.snapshot.SnapshotStore"><span>SnapshotStore</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
-                  </ol>
-                </div><div class="ancestors">
-                  <span class="filtertype">Implicitly<br />
-                  </span>
-                  <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
-                  </ol>
-                </div><div class="ancestors">
-              <span class="filtertype"></span>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
               <ol>
-                <li class="hideall out"><span>Hide All</span></li>
-                <li class="showall in"><span>Show All</span></li>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
               </ol>
             </div>
-          <div id="visbl">
-              <span class="filtertype">Visibility</span>
-              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
-            </div>
-        </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="akka.persistence.snapshot.redis.RedisSnapshotStore"><span>RedisSnapshotStore</span></li><li class="in" name="akka.persistence.snapshot.SnapshotStore"><span>SnapshotStore</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
       </div>
 
       <div id="template">
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(conf:com.typesafe.config.Config):akka.persistence.snapshot.redis.RedisSnapshotStore"></a><a id="&lt;init&gt;:RedisSnapshotStore"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#&lt;init&gt;(conf:com.typesafe.config.Config):akka.persistence.snapshot.redis.RedisSnapshotStore" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+              <ol><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(conf:com.typesafe.config.Config):akka.persistence.snapshot.redis.RedisSnapshotStore"></a>
+      <a id="&lt;init&gt;:RedisSnapshotStore"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
@@ -247,76 +110,79 @@
       <span class="symbol">
         <span class="name">RedisSnapshotStore</span><span class="params">(<span name="conf">conf: <span class="extype" name="com.typesafe.config.Config">Config</span></span>)</span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@&lt;init&gt;(conf:com.typesafe.config.Config):akka.persistence.snapshot.redis.RedisSnapshotStore" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li></ol>
             </div>
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="akka.actor.Actor.Receive" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Receive=akka.actor.Actor.Receive"></a><a id="Receive:Receive"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#Receive=akka.actor.Actor.Receive" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+              <ol><li name="akka.actor.Actor.Receive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Receive=akka.actor.Actor.Receive"></a>
+      <a id="Receive:Receive"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">Receive</span><span class="result alias"> = <a href="http://www.scala-lang.org/api/2.12.6/scala/PartialFunction.html#scala.PartialFunction" class="extype" name="scala.PartialFunction">PartialFunction</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a>, <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+        <span class="name">Receive</span><span class="result"> = <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.PartialFunction" class="extype" target="_top">PartialFunction</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a>, <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@Receive=akka.actor.Actor.Receive" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li></ol>
             </div>
 
         
 
-        <div class="values members">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol>
-                <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#!=(x$1:Any):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html###():Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="##():Int"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="+(other:String):String"></a><a id="+(String):String"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#+(other:String):String" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
@@ -324,19 +190,20 @@
       <span class="symbol">
         <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method any2stringadd in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
-    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="-&gt;[B](y:B):(A,B)"></a><a id="-&gt;[B](B):(RedisSnapshotStore,B)"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#-&gt;[B](y:B):(A,B)" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(RedisSnapshotStore,B)"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
@@ -344,8 +211,12 @@
       <span class="symbol">
         <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method ArrowAssoc in scala.Predef.
             
@@ -353,124 +224,127 @@
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#==(x$1:Any):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="akka.actor.Actor#aroundPostRestart" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="aroundPostRestart(reason:Throwable):Unit"></a><a id="aroundPostRestart(Throwable):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#aroundPostRestart(reason:Throwable):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.actor.Actor#aroundPostRestart" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundPostRestart(reason:Throwable):Unit"></a>
+      <a id="aroundPostRestart(Throwable):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aroundPostRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">aroundPostRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../index.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@aroundPostRestart(reason:Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../package.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
                 <span class="name">@InternalApi</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="akka.actor.Actor#aroundPostStop" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="akka.actor.Actor#aroundPostStop" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="aroundPostStop():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#aroundPostStop():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="aroundPostStop():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aroundPostStop</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">aroundPostStop</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../index.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@aroundPostStop():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../package.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
                 <span class="name">@InternalApi</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="akka.actor.Actor#aroundPreRestart" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="aroundPreRestart(reason:Throwable,message:Option[Any]):Unit"></a><a id="aroundPreRestart(Throwable,Option[Any]):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#aroundPreRestart(reason:Throwable,message:Option[Any]):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.actor.Actor#aroundPreRestart" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundPreRestart(reason:Throwable,message:Option[Any]):Unit"></a>
+      <a id="aroundPreRestart(Throwable,Option[Any]):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aroundPreRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="message">message: <a href="http://www.scala-lang.org/api/2.12.6/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">aroundPreRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="message">message: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../index.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@aroundPreRestart(reason:Throwable,message:Option[Any]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../package.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
                 <span class="name">@InternalApi</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="akka.actor.Actor#aroundPreStart" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="akka.actor.Actor#aroundPreStart" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="aroundPreStart():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#aroundPreStart():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="aroundPreStart():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aroundPreStart</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">aroundPreStart</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../index.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@aroundPreStart():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../package.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
                 <span class="name">@InternalApi</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="akka.actor.Actor#aroundReceive" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="aroundReceive(receive:akka.actor.Actor.Receive,msg:Any):Unit"></a><a id="aroundReceive(actor.Actor.Receive,Any):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#aroundReceive(receive:akka.actor.Actor.Receive,msg:Any):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.actor.Actor#aroundReceive" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundReceive(receive:akka.actor.Actor.Receive,msg:Any):Unit"></a>
+      <a id="aroundReceive(actor.Actor.Receive,Any):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aroundReceive</span><span class="params">(<span name="receive">receive: <span class="extype" name="akka.actor.Actor.Receive">actor.Actor.Receive</span></span>, <span name="msg">msg: <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">aroundReceive</span><span class="params">(<span name="receive">receive: <span class="extype" name="akka.actor.Actor.Receive">actor.Actor.Receive</span></span>, <span name="msg">msg: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../index.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@aroundReceive(receive:akka.actor.Actor.Receive,msg:Any):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../package.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
                 <span class="name">@InternalApi</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#asInstanceOf[T0]:T0" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
@@ -478,237 +352,248 @@
       <span class="symbol">
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="clone():Object"></a><a id="clone():AnyRef"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#clone():Object" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="akka.actor.Actor#context" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="context:akka.actor.ActorContext"></a><a id="context:ActorContext"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#context:akka.actor.ActorContext" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.actor.Actor#context" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="context:akka.actor.ActorContext"></a>
+      <a id="context:ActorContext"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">context</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/ActorContext.html#akka.actor.ActorContext" class="extype" name="akka.actor.ActorContext">ActorContext</a></span>
+        <span class="name">context</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.ActorContext" class="extype" target="_top">ActorContext</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@context:akka.actor.ActorContext" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#deleteAsync" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="deleteAsync(metadata:akka.persistence.SnapshotMetadata):scala.concurrent.Future[Unit]"></a><a id="deleteAsync(SnapshotMetadata):Future[Unit]"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#deleteAsync(metadata:akka.persistence.SnapshotMetadata):scala.concurrent.Future[Unit]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#deleteAsync" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="deleteAsync(metadata:akka.persistence.SnapshotMetadata):scala.concurrent.Future[Unit]"></a>
+      <a id="deleteAsync(SnapshotMetadata):Future[Unit]"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">deleteAsync</span><span class="params">(<span name="metadata">metadata: <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/SnapshotMetadata.html#akka.persistence.SnapshotMetadata" class="extype" name="akka.persistence.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+        <span class="name">deleteAsync</span><span class="params">(<span name="metadata">metadata: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.SnapshotMetadata" class="extype" target="_top">SnapshotMetadata</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → SnapshotStore</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#deleteAsync" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="deleteAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Unit]"></a><a id="deleteAsync(String,SnapshotSelectionCriteria):Future[Unit]"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#deleteAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Unit]" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@deleteAsync(metadata:akka.persistence.SnapshotMetadata):scala.concurrent.Future[Unit]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → SnapshotStore</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#deleteAsync" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="deleteAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Unit]"></a>
+      <a id="deleteAsync(String,SnapshotSelectionCriteria):Future[Unit]"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">deleteAsync</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="criteria">criteria: <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/SnapshotSelectionCriteria.html#akka.persistence.SnapshotSelectionCriteria" class="extype" name="akka.persistence.SnapshotSelectionCriteria">SnapshotSelectionCriteria</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+        <span class="name">deleteAsync</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="criteria">criteria: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.SnapshotSelectionCriteria" class="extype" target="_top">SnapshotSelectionCriteria</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → SnapshotStore</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#ec" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ec:scala.concurrent.ExecutionContextExecutor"></a><a id="ec:ExecutionContextExecutor"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#ec:scala.concurrent.ExecutionContextExecutor" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@deleteAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Unit]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → SnapshotStore</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#ec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ec:scala.concurrent.ExecutionContextExecutor"></a>
+      <a id="ec:ExecutionContextExecutor"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ec</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/concurrent/ExecutionContextExecutor.html#scala.concurrent.ExecutionContextExecutor" class="extype" name="scala.concurrent.ExecutionContextExecutor">ExecutionContextExecutor</a></span>
+        <span class="name">ec</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.concurrent.ExecutionContextExecutor" class="extype" target="_top">ExecutionContextExecutor</a></span>
       </span>
-      
-      
-    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a><a id="ensuring((RedisSnapshotStore)⇒Boolean,⇒Any):RedisSnapshotStore"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@ec:scala.concurrent.ExecutionContextExecutor" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((RedisSnapshotStore)⇒Boolean,⇒Any):RedisSnapshotStore"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensuring(cond:A=&gt;Boolean):A"></a><a id="ensuring((RedisSnapshotStore)⇒Boolean):RedisSnapshotStore"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#ensuring(cond:A=&gt;Boolean):A" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((RedisSnapshotStore)⇒Boolean):RedisSnapshotStore"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a><a id="ensuring(Boolean,⇒Any):RedisSnapshotStore"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):RedisSnapshotStore"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensuring(cond:Boolean):A"></a><a id="ensuring(Boolean):RedisSnapshotStore"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#ensuring(cond:Boolean):A" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):RedisSnapshotStore"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#eq(x$1:AnyRef):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#equals(x$1:Any):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#finalize():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="symbol">classOf[java.lang.Throwable]</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="formatted(fmtstr:String):String"></a><a id="formatted(String):String"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#formatted(fmtstr:String):String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
@@ -716,8 +601,12 @@
       <span class="symbol">
         <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method StringFormat in scala.Predef.
             
@@ -725,13 +614,10 @@
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#getClass():Class[_]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
@@ -739,147 +625,147 @@
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
-        </dd></dl></div>
-    </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#hashCode():Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
-        </dd></dl></div>
-    </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#isInstanceOf[T0]:Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#loadAsync" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="loadAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Option[akka.persistence.SelectedSnapshot]]"></a><a id="loadAsync(String,SnapshotSelectionCriteria):Future[Option[SelectedSnapshot]]"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#loadAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Option[akka.persistence.SelectedSnapshot]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#loadAsync" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Option[akka.persistence.SelectedSnapshot]]"></a>
+      <a id="loadAsync(String,SnapshotSelectionCriteria):Future[Option[SelectedSnapshot]]"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">loadAsync</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="criteria">criteria: <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/SnapshotSelectionCriteria.html#akka.persistence.SnapshotSelectionCriteria" class="extype" name="akka.persistence.SnapshotSelectionCriteria">SnapshotSelectionCriteria</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/SelectedSnapshot.html#akka.persistence.SelectedSnapshot" class="extype" name="akka.persistence.SelectedSnapshot">SelectedSnapshot</a>]]</span>
+        <span class="name">loadAsync</span><span class="params">(<span name="persistenceId">persistenceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="criteria">criteria: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.SnapshotSelectionCriteria" class="extype" target="_top">SnapshotSelectionCriteria</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.SelectedSnapshot" class="extype" target="_top">SelectedSnapshot</a>]]</span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@loadAsync(persistenceId:String,criteria:akka.persistence.SnapshotSelectionCriteria):scala.concurrent.Future[Option[akka.persistence.SelectedSnapshot]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → SnapshotStore</dd></dl></div>
-    </li><li name="akka.actor.ActorLogging#log" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="log:akka.event.LoggingAdapter"></a><a id="log:LoggingAdapter"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#log:akka.event.LoggingAdapter" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.actor.ActorLogging#log" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="log:akka.event.LoggingAdapter"></a>
+      <a id="log:LoggingAdapter"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">log</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/akka/event/LoggingAdapter.html#akka.event.LoggingAdapter" class="extype" name="akka.event.LoggingAdapter">LoggingAdapter</a></span>
+        <span class="name">log</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.event.LoggingAdapter" class="extype" target="_top">LoggingAdapter</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@log:akka.event.LoggingAdapter" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActorLogging</dd></dl></div>
-    </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#ne(x$1:AnyRef):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#notify():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
-        </dd></dl></div>
-    </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#notifyAll():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
-        </dd></dl></div>
-    </li><li name="akka.actor.Actor#postRestart" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="postRestart(reason:Throwable):Unit"></a><a id="postRestart(Throwable):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#postRestart(reason:Throwable):Unit" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="akka.actor.Actor#postRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="postRestart(reason:Throwable):Unit"></a>
+      <a id="postRestart(Throwable):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">postRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">postRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@postRestart(reason:Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -887,37 +773,39 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#postStop" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#postStop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="postStop():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#postStop():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="postStop():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">postStop</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">postStop</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@postStop():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → Actor</dd></dl></div>
-    </li><li name="akka.actor.Actor#preRestart" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="preRestart(reason:Throwable,message:Option[Any]):Unit"></a><a id="preRestart(Throwable,Option[Any]):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#preRestart(reason:Throwable,message:Option[Any]):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="akka.actor.Actor#preRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preRestart(reason:Throwable,message:Option[Any]):Unit"></a>
+      <a id="preRestart(Throwable,Option[Any]):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">preRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="message">message: <a href="http://www.scala-lang.org/api/2.12.6/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">preRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="message">message: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@preRestart(reason:Throwable,message:Option[Any]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -925,45 +813,44 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#preStart" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#preStart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="preStart():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#preStart():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="preStart():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">preStart</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">preStart</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → Actor</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.SnapshotStore#receive" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="receive:PartialFunction[Any,Unit]"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#receive:PartialFunction[Any,Unit]" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@preStart():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → Actor</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.SnapshotStore#receive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="receive:PartialFunction[Any,Unit]"></a>
+      <a id="receive:PartialFunction[Any,Unit]"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">receive</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/PartialFunction.html#scala.PartialFunction" class="extype" name="scala.PartialFunction">PartialFunction</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a>, <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+        <span class="name">receive</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.PartialFunction" class="extype" target="_top">PartialFunction</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a>, <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SnapshotStore → Actor</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.SnapshotStore#receivePluginInternal" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="receivePluginInternal:akka.actor.Actor.Receive"></a><a id="receivePluginInternal:actor.Actor.Receive"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#receivePluginInternal:akka.actor.Actor.Receive" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@receive:PartialFunction[Any,Unit]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SnapshotStore → Actor</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.SnapshotStore#receivePluginInternal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="receivePluginInternal:akka.actor.Actor.Receive"></a>
+      <a id="receivePluginInternal:actor.Actor.Receive"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
@@ -971,15 +858,16 @@
       <span class="symbol">
         <span class="name">receivePluginInternal</span><span class="result">: <span class="extype" name="akka.actor.Actor.Receive">actor.Actor.Receive</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SnapshotStore</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.SnapshotStore#receiveSnapshotStore" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="receiveSnapshotStore:akka.actor.Actor.Receive"></a><a id="receiveSnapshotStore:actor.Actor.Receive"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#receiveSnapshotStore:akka.actor.Actor.Receive" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@receivePluginInternal:akka.actor.Actor.Receive" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SnapshotStore</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.SnapshotStore#receiveSnapshotStore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="receiveSnapshotStore:akka.actor.Actor.Receive"></a>
+      <a id="receiveSnapshotStore:actor.Actor.Receive"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">val</span>
@@ -987,127 +875,135 @@
       <span class="symbol">
         <span class="name">receiveSnapshotStore</span><span class="result">: <span class="extype" name="akka.actor.Actor.Receive">actor.Actor.Receive</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SnapshotStore</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#redis" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="redis:redis.RedisClient"></a><a id="redis:RedisClient"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#redis:redis.RedisClient" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@receiveSnapshotStore:akka.actor.Actor.Receive" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SnapshotStore</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#redis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="redis:redis.RedisClient"></a>
+      <a id="redis:RedisClient"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">var</span>
       </span>
       <span class="symbol">
-        <span class="name">redis</span><span class="result">: <a href="http://etaty.github.io/rediscala/redis/RedisClient.html#redis.RedisClient" class="extype" name="redis.RedisClient">RedisClient</a></span>
+        <span class="name">redis</span><span class="result">: <a href="http://etaty.github.io/rediscala/index.html#redis.RedisClient" class="extype" target="_top">RedisClient</a></span>
       </span>
-      
-      
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#saveAsync" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="saveAsync(metadata:akka.persistence.SnapshotMetadata,snapshot:Any):scala.concurrent.Future[Unit]"></a><a id="saveAsync(SnapshotMetadata,Any):Future[Unit]"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#saveAsync(metadata:akka.persistence.SnapshotMetadata,snapshot:Any):scala.concurrent.Future[Unit]" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@redis:redis.RedisClient" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#saveAsync" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveAsync(metadata:akka.persistence.SnapshotMetadata,snapshot:Any):scala.concurrent.Future[Unit]"></a>
+      <a id="saveAsync(SnapshotMetadata,Any):Future[Unit]"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsync</span><span class="params">(<span name="metadata">metadata: <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/SnapshotMetadata.html#akka.persistence.SnapshotMetadata" class="extype" name="akka.persistence.SnapshotMetadata">SnapshotMetadata</a></span>, <span name="snapshot">snapshot: <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+        <span class="name">saveAsync</span><span class="params">(<span name="metadata">metadata: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.SnapshotMetadata" class="extype" target="_top">SnapshotMetadata</a></span>, <span name="snapshot">snapshot: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → SnapshotStore</dd></dl></div>
-    </li><li name="akka.actor.Actor#self" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:akka.actor.ActorRef"></a><a id="self:ActorRef"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#self:akka.actor.ActorRef" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@saveAsync(metadata:akka.persistence.SnapshotMetadata,snapshot:Any):scala.concurrent.Future[Unit]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> → SnapshotStore</dd></dl></div>
+    </li><li name="akka.actor.Actor#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="self:akka.actor.ActorRef"></a>
+      <a id="self:ActorRef"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit final </span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">self</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/ActorRef.html#akka.actor.ActorRef" class="extype" name="akka.actor.ActorRef">ActorRef</a></span>
+        <span class="name">self</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.ActorRef" class="extype" target="_top">ActorRef</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="akka.actor.Actor#sender" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="sender():akka.actor.ActorRef"></a><a id="sender():ActorRef"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#sender():akka.actor.ActorRef" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@self:akka.actor.ActorRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="akka.actor.Actor#sender" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sender():akka.actor.ActorRef"></a>
+      <a id="sender():ActorRef"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sender</span><span class="params">()</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/ActorRef.html#akka.actor.ActorRef" class="extype" name="akka.actor.ActorRef">ActorRef</a></span>
+        <span class="name">sender</span><span class="params">()</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.ActorRef" class="extype" target="_top">ActorRef</a></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#serialization" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="serialization:akka.serialization.Serialization"></a><a id="serialization:Serialization"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#serialization:akka.serialization.Serialization" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@sender():akka.actor.ActorRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#serialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="serialization:akka.serialization.Serialization"></a>
+      <a id="serialization:Serialization"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">serialization</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/akka/serialization/Serialization.html#akka.serialization.Serialization" class="extype" name="akka.serialization.Serialization">Serialization</a></span>
+        <span class="name">serialization</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.serialization.Serialization" class="extype" target="_top">Serialization</a></span>
       </span>
-      
-      
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#snapshotFromBytes" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="snapshotFromBytes(a:Array[Byte]):akka.persistence.serialization.Snapshot"></a><a id="snapshotFromBytes(Array[Byte]):Snapshot"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#snapshotFromBytes(a:Array[Byte]):akka.persistence.serialization.Snapshot" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@serialization:akka.serialization.Serialization" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#snapshotFromBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="snapshotFromBytes(a:Array[Byte]):akka.persistence.serialization.Snapshot"></a>
+      <a id="snapshotFromBytes(Array[Byte]):Snapshot"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">snapshotFromBytes</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.12.6/scala/Array.html#scala.Array" class="extype" name="scala.Array">Array</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Byte.html#scala.Byte" class="extype" name="scala.Byte">Byte</a>]</span>)</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/serialization/Snapshot.html#akka.persistence.serialization.Snapshot" class="extype" name="akka.persistence.serialization.Snapshot">Snapshot</a></span>
+        <span class="name">snapshotFromBytes</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>)</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.serialization.Snapshot" class="extype" target="_top">Snapshot</a></span>
       </span>
-      
-      
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#snapshotToBytes" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="snapshotToBytes(s:akka.persistence.serialization.Snapshot):Array[Byte]"></a><a id="snapshotToBytes(Snapshot):Array[Byte]"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#snapshotToBytes(s:akka.persistence.serialization.Snapshot):Array[Byte]" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@snapshotFromBytes(a:Array[Byte]):akka.persistence.serialization.Snapshot" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#snapshotToBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="snapshotToBytes(s:akka.persistence.serialization.Snapshot):Array[Byte]"></a>
+      <a id="snapshotToBytes(Snapshot):Array[Byte]"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">snapshotToBytes</span><span class="params">(<span name="s">s: <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/serialization/Snapshot.html#akka.persistence.serialization.Snapshot" class="extype" name="akka.persistence.serialization.Snapshot">Snapshot</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Array.html#scala.Array" class="extype" name="scala.Array">Array</a>[<a href="http://www.scala-lang.org/api/2.12.6/scala/Byte.html#scala.Byte" class="extype" name="scala.Byte">Byte</a>]</span>
+        <span class="name">snapshotToBytes</span><span class="params">(<span name="s">s: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.serialization.Snapshot" class="extype" target="_top">Snapshot</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>
       </span>
-      
-      
-    </li><li name="akka.actor.Actor#supervisorStrategy" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="supervisorStrategy:akka.actor.SupervisorStrategy"></a><a id="supervisorStrategy:SupervisorStrategy"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#supervisorStrategy:akka.actor.SupervisorStrategy" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@snapshotToBytes(s:akka.persistence.serialization.Snapshot):Array[Byte]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      
+    </li><li name="akka.actor.Actor#supervisorStrategy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="supervisorStrategy:akka.actor.SupervisorStrategy"></a>
+      <a id="supervisorStrategy:SupervisorStrategy"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
@@ -1115,15 +1011,16 @@
       <span class="symbol">
         <span class="name">supervisorStrategy</span><span class="result">: <span class="extype" name="akka.actor.SupervisorStrategy">SupervisorStrategy</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@supervisorStrategy:akka.actor.SupervisorStrategy" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
@@ -1131,31 +1028,33 @@
       <span class="symbol">
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#system" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="system:akka.actor.ActorSystem"></a><a id="system:ActorSystem"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#system:akka.actor.ActorSystem" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="akka.persistence.snapshot.redis.RedisSnapshotStore#system" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="system:akka.actor.ActorSystem"></a>
+      <a id="system:ActorSystem"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">system</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/ActorSystem.html#akka.actor.ActorSystem" class="extype" name="akka.actor.ActorSystem">ActorSystem</a></span>
+        <span class="name">system</span><span class="result">: <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.ActorSystem" class="extype" target="_top">ActorSystem</a></span>
       </span>
-      
-      
-    </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="toString():String"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#toString():String" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@system:akka.actor.ActorSystem" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
@@ -1163,39 +1062,45 @@
       <span class="symbol">
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="akka.actor.Actor#unhandled" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="unhandled(message:Any):Unit"></a><a id="unhandled(Any):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#unhandled(message:Any):Unit" title="Permalink">
-        <i class="material-icons"></i>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="akka.actor.Actor#unhandled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unhandled(message:Any):Unit"></a>
+      <a id="unhandled(Any):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">unhandled</span><span class="params">(<span name="message">message: <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">unhandled</span><span class="params">(<span name="message">message: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@unhandled(message:Any):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#wait():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -1203,21 +1108,22 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.6/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.12.6/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -1225,37 +1131,33 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#wait(x$1:Long):Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.6/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.6/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
-      
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="→[B](y:B):(A,B)"></a><a id="→[B](B):(RedisSnapshotStore,B)"></a>
-      <span class="permalink">
-      <a href="../../../../akka/persistence/snapshot/redis/RedisSnapshotStore.html#→[B](y:B):(A,B)" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(RedisSnapshotStore,B)"></a>
+      <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
@@ -1263,14 +1165,17 @@
       <span class="symbol">
         <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
       </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.snapshot.redis.RedisSnapshotStore@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a> to
             <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="akka.persistence.snapshot.redis.RedisSnapshotStore">RedisSnapshotStore</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
-    </li>
-              </ol>
+    </li></ol>
             </div>
 
         
@@ -1280,15 +1185,15 @@
 
         <div id="inheritedMembers">
         <div class="parent" name="akka.persistence.snapshot.SnapshotStore">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.5.14/akka/persistence/snapshot/SnapshotStore.html#akka.persistence.snapshot.SnapshotStore" class="extype" name="akka.persistence.snapshot.SnapshotStore">SnapshotStore</a></h3>
+              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.snapshot.SnapshotStore" class="extype" target="_top">SnapshotStore</a></h3>
             </div><div class="parent" name="akka.actor.ActorLogging">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/ActorLogging.html#akka.actor.ActorLogging" class="extype" name="akka.actor.ActorLogging">ActorLogging</a></h3>
+              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.ActorLogging" class="extype" target="_top">ActorLogging</a></h3>
             </div><div class="parent" name="akka.actor.Actor">
-              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.5.14/akka/actor/Actor.html#akka.actor.Actor" class="extype" name="akka.actor.Actor">Actor</a></h3>
+              <h3>Inherited from <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.actor.Actor" class="extype" target="_top">Actor</a></h3>
             </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.6/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.6/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
             </div>
         <div class="conversion" name="scala.Predef.any2stringadd">
               <h3>Inherited by implicit conversion any2stringadd from
@@ -1321,9 +1226,7 @@
       <div id="tooltip"></div>
 
       <div id="footer"> Copyright © 2017 Safety Data </div>
-    </body>
-          </div>
-        </div>
-      </div>
+
+
     </body>
       </html>

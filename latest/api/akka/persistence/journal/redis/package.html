@@ -1,0 +1,120 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>redis - Akka Persistence Redis 0.5.0-SNAPSHOT - akka.persistence.journal.redis</title>
+          <meta name="description" content="redis - Akka Persistence Redis 0.5.0 - SNAPSHOT - akka.persistence.journal.redis" />
+          <meta name="keywords" content="redis Akka Persistence Redis 0.5.0 SNAPSHOT akka.persistence.journal.redis" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'akka.persistence.journal.redis.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="akka">akka</a>.<a href="../../package.html" class="extype" name="akka.persistence">persistence</a>.<a href="../package.html" class="extype" name="akka.persistence.journal">journal</a></p>
+        <h1>redis</h1><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.journal.redis.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">redis</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="akka.persistence.journal.redis.RedisJournal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RedisJournalextendsAsyncWriteJournal"></a>
+      <a id="RedisJournal:RedisJournal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RedisJournal.html"><span class="name">RedisJournal</span></a><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.5.14/index.html#akka.persistence.journal.AsyncWriteJournal" class="extype" target="_top">AsyncWriteJournal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#akka.persistence.journal.redis.package@RedisJournalextendsAsyncWriteJournal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Stores events inside a redis database.</p><div class="fullcomment"><div class="comment cmt"><p>Stores events inside a redis database.</p><p> For each persistence id <code>persistenceId</code>, it creates two keys:</p><ul><li><code>journal:persisted:persistenceId</code> contains a sorted set of events (sorted by sequence number)</li><li><code>journal:persisted:persistenceId:highestSequenceNr</code> contains the highest sequence number</li></ul><p> For each tag <code>t</code>, it creates a key <code>journal:tag:t</code> which contains the ordered list of pair (sequenceNr, persistenceId).
+ Order in this list is the order in which events with the given tag <code>t</code> were recorded.</p><p> It also maintains following keys:</p><ul><li><code>journal:persistenceIds</code> which is a set of persistence identifiers.</li><li><code>journal:tags</code> which is the set of all tags.</li></ul><p> Using the redis PubSub mechanism, this journal notifies whoever is interested on following channels:</p><ul><li><code>journal:channel:ids</code> any new persisted identifier is published</li><li><code>journal:channel:persisted:&lt;id&gt;</code> anytime a new event is appended to a persistence id <code>&lt;id&gt;</code>, the sequenceNr is published</li><li><code>journal:channel:tags</code> anytime a new event is appended to a tag, the tag name is published
+</li></ul></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer"> Copyright © 2017 Safety Data </div>
+
+
+    </body>
+      </html>
