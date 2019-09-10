@@ -77,12 +77,12 @@ class RedisJournal(conf: Config) extends AsyncWriteJournal {
 
   var redis: RedisClient = _
 
-  override def preStart() {
+  override def preStart(): Unit = {
     redis = RedisUtils.create(conf)
     super.preStart()
   }
 
-  override def postStop() {
+  override def postStop(): Unit = {
     redis.stop()
     super.postStop()
   }

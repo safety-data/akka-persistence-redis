@@ -133,7 +133,7 @@ private class EventsByTagSource(conf: Config, redis: RedisClient, tag: String, o
               }
               currentOffset += nb
               if (evts.nonEmpty) {
-                buffer.enqueue(evts: _*)
+                buffer ++= evts
                 deliver()
               } else {
                 // requery immediately

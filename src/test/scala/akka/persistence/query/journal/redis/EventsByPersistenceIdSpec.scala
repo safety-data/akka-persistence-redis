@@ -26,7 +26,7 @@ import akka.testkit.ImplicitSender
 
 object EventsByPersistenceIdSpec {
   val config = """
-    akka.loglevel = INFO
+    akka.loglevel = INFO 
     akka.persistence.journal.plugin = "akka-persistence-redis.journal"
     akka.test.single-expect-default = 10s
     """

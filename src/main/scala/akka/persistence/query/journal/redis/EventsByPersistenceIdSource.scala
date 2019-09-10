@@ -142,7 +142,7 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
             currentSequenceNr = maxSequenceNr
             log.debug(f"Max sequence number is now $maxSequenceNr")
             if (evts.nonEmpty) {
-              buffer.enqueue(evts: _*)
+              buffer ++= evts
               deliver()
             } else {
               // requery immediately
@@ -250,7 +250,7 @@ private class EventsByPersistenceIdSource(conf: Config, redis: RedisClient, pers
             if (buffer.isEmpty) {
               // so, we need to fill this buffer
               state = Querying
-              redis.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(currentSequenceNr), Limit(to), Some(0l -> max)).onComplete {
+              redis.zrangebyscore[Array[Byte]](journalKey(persistenceId), Limit(currentSequenceNr), Limit(to), Some(0L -> max)).onComplete {
                 case Success(events) =>
                   callback.invoke(events.map(persistentFromBytes(_)))
                 case Failure(t) =>

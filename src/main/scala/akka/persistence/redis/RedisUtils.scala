@@ -22,7 +22,7 @@ import _root_.redis._
 import akka.persistence.utils.HostAndPort
 import com.typesafe.config.Config
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 object RedisUtils {
 
@@ -48,6 +48,7 @@ object RedisUtils {
         .getConfigList("redis.sentinels")
         .asScala
         .map(c => (c.getString("host"), c.getInt("port")))
+        .toSeq
     } else {
       conf
         .getString("redis.sentinel-list")

@@ -27,7 +27,7 @@ import scala.concurrent.duration._
 trait Cleanup {
   this: AkkaSpec =>
 
-  override def beforeTermination() {
+  override def beforeTermination(): Unit = {
     val redis = RedisUtils.create(ConfigFactory.load.getConfig("akka-persistence-redis"))
     Await.result(redis.eval(
       "return redis.call('del', unpack(redis.call('keys', ARGV[1])))",

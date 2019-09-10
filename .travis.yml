@@ -1,9 +1,9 @@
 language: scala
 scala:
-   2.12.1
+   - 2.13.0
 
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 # only trigger builds on master
 branches:
