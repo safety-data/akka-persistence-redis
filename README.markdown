@@ -33,7 +33,7 @@ The plugin is compiled with Scala 2.13, 2.12 and 2.11 and deployed on the maven 
 To use the plugin add this to your sbt build file :
 
 ```scala
-libraryDependencies += "com.safety-data" %% "akka-persistence-redis" % "0.4.1"
+libraryDependencies += "com.safety-data" %% "akka-persistence-redis" % "0.4.2"
 ```
 
 _Note_: for snapshot versions you will need to add the sonatype snapshot resolver.
