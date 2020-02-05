@@ -100,7 +100,7 @@ private class PersistenceIdsSource(conf: Config, redis: RedisClient, system: Act
                 // it is not the start anymore
                 start = false
                 // enqueue received data
-                buffer.enqueue(data: _*)
+                buffer ++= data
                 // deliver element
                 deliver()
             }

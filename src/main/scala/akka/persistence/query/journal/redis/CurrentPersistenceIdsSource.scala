@@ -69,7 +69,7 @@ private class CurrentPersistenceIdsSource(redis: RedisClient) extends GraphStage
                 // it is not the start anymore
                 start = false
                 // enqueue received data
-                buffer.enqueue(data: _*)
+                buffer ++= data
                 // deliver element
                 deliver()
             }

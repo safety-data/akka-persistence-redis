@@ -1,7 +1,8 @@
 import scalariform.formatter.preferences._
 
-val akkaVersion = "2.5.17"
-val redisScalaVersion = "1.8.4"
+val akkaVersion = "2.5.29"
+val redisScalaVersion = "1.9.0"
+val scalaCollectionCompatVersion = "2.1.3"
 
 lazy val publishSettings = Seq(
   publishMavenStyle := true,
@@ -39,10 +40,11 @@ lazy val siteSettings = Seq(
 lazy val dependencies = Seq(
   "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
   "com.typesafe.akka" %% "akka-persistence-query" % akkaVersion,
-  "com.github.Ma27" %% "rediscala" % redisScalaVersion,
+  "com.github.etaty" %% "rediscala" % redisScalaVersion,
+  "org.scala-lang.modules" %% "scala-collection-compat" % scalaCollectionCompatVersion,
   "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % "test",
   "com.typesafe.akka" %% "akka-persistence-tck" % akkaVersion % "test",
-  "com.github.pocketberserker" %% "scodec-msgpack" % "0.6.0" % "test")
+  "com.github.xuwei-k" %% "scodec-msgpack" % "0.7.0" % "test")
 
 lazy val root = project.in(file("."))
   .enablePlugins(SiteScaladocPlugin, GhpagesPlugin)
@@ -53,12 +55,12 @@ lazy val root = project.in(file("."))
     resolvers += "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/",
     organization := "com.safety-data",
     name := "akka-persistence-redis",
-    version := "0.4.1",
+    version := "0.4.2",
     licenses += ("The Apache Software License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     homepage := Some(url("https://github.com/safety-data/akka-persistence-redis")),
     scmInfo := Some(ScmInfo(url("https://github.com/safety-data/akka-persistence-redis"), "git@github.com:safety-data/akka-persistence-redis.git")),
-    scalaVersion := "2.12.7",
-    crossScalaVersions := Seq("2.12.7", "2.11.12"),
+    scalaVersion := "2.13.1",
+    crossScalaVersions := Seq("2.13.1", "2.12.10", "2.11.12"),
     libraryDependencies ++= dependencies,
     parallelExecution in Test := false,
     scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits", "-implicits-show-all", "-diagrams", "-doc-title", "Akka Persistence Redis", "-doc-version", version.value, "-doc-footer", "Copyright © 2017 Safety Data"),

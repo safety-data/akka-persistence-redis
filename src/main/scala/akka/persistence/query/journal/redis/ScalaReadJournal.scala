@@ -75,7 +75,7 @@ class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config
    */
   def eventsByTag(tag: String, offset: Offset): Source[EventEnvelope, NotUsed] = offset match {
     case NoOffset =>
-      Source.fromGraph(new EventsByTagSource(conf, redis, tag, 0l, system, true))
+      Source.fromGraph(new EventsByTagSource(conf, redis, tag, 0L, system, true))
     case Sequence(offsetValue) =>
       Source.fromGraph(new EventsByTagSource(conf, redis, tag, offsetValue, system, true))
     case _ =>
@@ -95,7 +95,7 @@ class ScalaReadJournal private[redis] (system: ExtendedActorSystem, conf: Config
    */
   def currentEventsByTag(tag: String, offset: Offset): Source[EventEnvelope, NotUsed] = offset match {
     case NoOffset =>
-      Source.fromGraph(new EventsByTagSource(conf, redis, tag, 0l, system, false))
+      Source.fromGraph(new EventsByTagSource(conf, redis, tag, 0L, system, false))
     case Sequence(offsetValue) =>
       Source.fromGraph(new EventsByTagSource(conf, redis, tag, offsetValue, system, false))
     case _ =>

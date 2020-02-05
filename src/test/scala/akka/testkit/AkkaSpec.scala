@@ -39,7 +39,7 @@ object AkkaSpec {
                                                     """)
 
   def mapToConfig(map: Map[String, Any]): Config = {
-    import scala.collection.JavaConverters._
+    import scala.jdk.CollectionConverters._
     ConfigFactory.parseMap(map.asJava)
   }
 
@@ -47,8 +47,8 @@ object AkkaSpec {
     val s = (Thread.currentThread.getStackTrace map (_.getClassName) drop 1)
       .dropWhile(_ matches "(java.lang.Thread|.*AkkaSpec.?$|.*StreamSpec.?$)")
     val reduced = s.lastIndexWhere(_ == clazz.getName) match {
-      case -1 ⇒ s
-      case z  ⇒ s drop (z + 1)
+      case -1 => s
+      case z  => s drop (z + 1)
     }
     reduced.head.replaceFirst(""".*\.""", "").replaceAll("[^a-zA-Z_0-9]", "_")
   }
@@ -75,25 +75,25 @@ abstract class AkkaSpec(_system: ActorSystem)
 
   override val invokeBeforeAllAndAfterAllEvenIfNoTestsAreExpected = true
 
-  final override def beforeAll {
-    startCoroner
+  final override def beforeAll: Unit = {
+    startCoroner()
     atStartup()
   }
 
-  final override def afterAll {
+  final override def afterAll: Unit = {
     beforeTermination()
     shutdown()
     afterTermination()
     stopCoroner()
   }
 
-  protected def atStartup() {}
+  protected def atStartup(): Unit = {}
 
-  protected def beforeTermination() {}
+  protected def beforeTermination(): Unit = {}
 
-  protected def afterTermination() {}
+  protected def afterTermination(): Unit = {}
 
-  def spawn(dispatcherId: String = Dispatchers.DefaultDispatcherId)(body: ⇒ Unit): Unit =
+  def spawn(dispatcherId: String = Dispatchers.DefaultDispatcherId)(body: => Unit): Unit =
     Future(body)(system.dispatchers.lookup(dispatcherId))
 
   override def expectedTestDuration: FiniteDuration = 60 seconds
