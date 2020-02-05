@@ -29,7 +29,7 @@ This plugin stores data in a [redis](https://redis.io) database.
 
 ## Installation
 
-The plugin is compiled with Scala 2.12 and 2.11 and are deployed on maven sonatype repositories.
+The plugin is compiled with Scala 2.13, 2.12 and 2.11 and deployed on the maven sonatype repositories.
 To use the plugin add this to your sbt build file :
 
 ```scala

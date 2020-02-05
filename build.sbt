@@ -1,8 +1,8 @@
 import scalariform.formatter.preferences._
 
-val akkaVersion = "2.5.25"
+val akkaVersion = "2.5.29"
 val redisScalaVersion = "1.9.0"
-val scalaCollectionCompatVersion = "2.1.2"
+val scalaCollectionCompatVersion = "2.1.3"
 
 lazy val publishSettings = Seq(
   publishMavenStyle := true,
@@ -55,12 +55,12 @@ lazy val root = project.in(file("."))
     resolvers += "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/",
     organization := "com.safety-data",
     name := "akka-persistence-redis",
-    version := "0.4.1",
+    version := "0.4.2",
     licenses += ("The Apache Software License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     homepage := Some(url("https://github.com/safety-data/akka-persistence-redis")),
     scmInfo := Some(ScmInfo(url("https://github.com/safety-data/akka-persistence-redis"), "git@github.com:safety-data/akka-persistence-redis.git")),
-    scalaVersion := "2.13.0",
-    crossScalaVersions := Seq("2.13.0", "2.12.9", "2.11.12"),
+    scalaVersion := "2.13.1",
+    crossScalaVersions := Seq("2.13.1", "2.12.10", "2.11.12"),
     libraryDependencies ++= dependencies,
     parallelExecution in Test := false,
     scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits", "-implicits-show-all", "-diagrams", "-doc-title", "Akka Persistence Redis", "-doc-version", version.value, "-doc-footer", "Copyright © 2017 Safety Data"),
