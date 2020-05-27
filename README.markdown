@@ -1,6 +1,8 @@
 # Akka Persistence Redis Plugin
 [![Build Status](https://travis-ci.org/safety-data/akka-persistence-redis.svg?branch=master)](https://travis-ci.org/safety-data/akka-persistence-redis)
 
+**Note:** Safety Data is no longer using Redis in our currently developed projects, and has stopped maintaining this repository. Feel free to fork!
+
 - [Scaladoc](https://safety-data.github.io/akka-persistence-redis/latest/api/index.html)
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
